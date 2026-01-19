@@ -1,14 +1,17 @@
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { ArrowRight, Shield, Award, Clock } from 'lucide-react';
 import { PrimaryButton, SecondaryButton } from '../ui';
 
-const stats = [
-  { icon: Shield, value: '15+', label: 'Years Experience' },
-  { icon: Award, value: 'ISO 9001', label: 'Certified' },
-  { icon: Clock, value: '48h', label: 'Quick Quotes' },
-];
-
 export const HeroSection = () => {
+  const { t } = useTranslation();
+
+  const stats = [
+    { icon: Shield, value: '15+', label: t('hero.yearsExperience') },
+    { icon: Award, value: 'ISO 9001', label: t('hero.certified') },
+    { icon: Clock, value: '48h', label: t('hero.quickQuotes') },
+  ];
+
   return (
     <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-gradient-to-br from-white via-emas-light-bg to-white">
       {/* Background Pattern */}
@@ -25,31 +28,29 @@ export const HeroSection = () => {
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-emas-light-bg rounded-full mb-6">
               <span className="w-2 h-2 bg-emas-soft-blue rounded-full animate-pulse" />
               <span className="text-sm font-medium text-emas-deep-blue">
-                Precision Engineering Since 2009
+                {t('hero.badge')}
               </span>
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-emas-deep-blue leading-tight mb-6">
-              Precision CNC{' '}
-              <span className="text-gradient">Machining</span>{' '}
-              Excellence
+              {t('hero.title1')}{' '}
+              <span className="text-gradient">{t('hero.title2')}</span>{' '}
+              {t('hero.title3')}
             </h1>
 
             <p className="text-lg md:text-xl text-gray-600 leading-relaxed mb-8 max-w-xl">
-              From complex aerospace components to high-volume industrial parts,
-              we deliver precision-machined solutions that meet the most demanding
-              specifications. Your vision, engineered to perfection.
+              {t('hero.description')}
             </p>
 
             <div className="flex flex-wrap gap-4 mb-12">
               <Link to="/contact">
                 <PrimaryButton size="lg" rightIcon={<ArrowRight className="w-5 h-5" />}>
-                  Request a Quote
+                  {t('hero.requestQuote')}
                 </PrimaryButton>
               </Link>
               <Link to="/capabilities">
                 <SecondaryButton size="lg">
-                  Our Capabilities
+                  {t('hero.ourCapabilities')}
                 </SecondaryButton>
               </Link>
             </div>
@@ -97,10 +98,10 @@ export const HeroSection = () => {
                     </svg>
                   </div>
                   <p className="font-heading font-semibold text-emas-deep-blue">
-                    5-Axis CNC
+                    {t('hero.fiveAxisCnc')}
                   </p>
                   <p className="text-sm text-gray-500">
-                    Precision Machining
+                    {t('hero.precisionMachining')}
                   </p>
                 </div>
               </div>
@@ -112,7 +113,7 @@ export const HeroSection = () => {
                     <Shield className="w-5 h-5 text-green-600" />
                   </div>
                   <div>
-                    <p className="font-medium text-gray-800">Quality Assured</p>
+                    <p className="font-medium text-gray-800">{t('hero.qualityAssured')}</p>
                     <p className="text-xs text-gray-500">ISO 9001:2015</p>
                   </div>
                 </div>
@@ -124,8 +125,8 @@ export const HeroSection = () => {
                     <Clock className="w-5 h-5 text-blue-600" />
                   </div>
                   <div>
-                    <p className="font-medium text-gray-800">Fast Turnaround</p>
-                    <p className="text-xs text-gray-500">From 48 hours</p>
+                    <p className="font-medium text-gray-800">{t('hero.fastTurnaround')}</p>
+                    <p className="text-xs text-gray-500">{t('hero.from48Hours')}</p>
                   </div>
                 </div>
               </div>

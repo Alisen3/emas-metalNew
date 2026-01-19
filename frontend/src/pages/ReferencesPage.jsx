@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { ExternalLink, Building2, ArrowRight } from 'lucide-react';
 import { SectionHeader, LoadingSpinner, Alert } from '../components/ui';
 import { referencesApi, getImageUrl } from '../api';
@@ -16,19 +17,20 @@ const fallbackReferences = [
   { id: '8', name: 'Voith', industry: 'Industrial Technology', description: 'Power transmission components', websiteUrl: 'https://voith.com', createdAt: '' },
 ];
 
-const industries = [
-  { name: 'Aerospace & Defense', count: 15 },
-  { name: 'Automotive', count: 25 },
-  { name: 'Energy & Power', count: 18 },
-  { name: 'Medical Devices', count: 12 },
-  { name: 'Industrial Machinery', count: 30 },
-  { name: 'Robotics & Automation', count: 20 },
-];
-
 export const ReferencesPage = () => {
+  const { t } = useTranslation();
   const [references, setReferences] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  const industries = [
+    { name: t('references.aerospaceDefense'), count: 15 },
+    { name: t('references.automotive'), count: 25 },
+    { name: t('references.energyPower'), count: 18 },
+    { name: t('references.medicalDevices'), count: 12 },
+    { name: t('references.industrialMachinery'), count: 30 },
+    { name: t('references.roboticsAutomation'), count: 20 },
+  ];
 
   useEffect(() => {
     const fetchReferences = async () => {
@@ -40,7 +42,7 @@ export const ReferencesPage = () => {
       } catch (err) {
         console.warn('Using fallback data:', err);
         setReferences(fallbackReferences);
-        setError(null); // Don't show error if fallback works
+        setError(null);
       } finally {
         setLoading(false);
       }
@@ -57,11 +59,10 @@ export const ReferencesPage = () => {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-heading font-bold text-emas-deep-blue mb-6">
-              Trusted by Industry Leaders
+              {t('references.pageTitle')}
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed">
-              For over 15 years, we've been the precision manufacturing partner of choice
-              for leading companies across Europe and beyond.
+              {t('references.pageSubtitle')}
             </p>
           </div>
         </div>
@@ -73,19 +74,19 @@ export const ReferencesPage = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
               <div className="text-4xl font-heading font-bold text-white">200+</div>
-              <div className="text-white/70 mt-1">Satisfied Clients</div>
+              <div className="text-white/70 mt-1">{t('references.satisfiedClients')}</div>
             </div>
             <div>
               <div className="text-4xl font-heading font-bold text-white">15+</div>
-              <div className="text-white/70 mt-1">Years Experience</div>
+              <div className="text-white/70 mt-1">{t('references.yearsExperience')}</div>
             </div>
             <div>
               <div className="text-4xl font-heading font-bold text-white">50K+</div>
-              <div className="text-white/70 mt-1">Parts Delivered</div>
+              <div className="text-white/70 mt-1">{t('references.partsDelivered')}</div>
             </div>
             <div>
               <div className="text-4xl font-heading font-bold text-white">99.5%</div>
-              <div className="text-white/70 mt-1">On-Time Delivery</div>
+              <div className="text-white/70 mt-1">{t('references.onTimeDelivery')}</div>
             </div>
           </div>
         </div>
@@ -95,8 +96,8 @@ export const ReferencesPage = () => {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
-            title="Industries We Serve"
-            subtitle="Delivering precision components across diverse sectors."
+            title={t('references.industriesTitle')}
+            subtitle={t('references.industriesSubtitle')}
           />
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
             {industries.map((industry) => (
@@ -108,7 +109,7 @@ export const ReferencesPage = () => {
                   <Building2 className="w-6 h-6 text-emas-soft-blue" />
                   <span className="font-medium text-emas-deep-blue">{industry.name}</span>
                 </div>
-                <span className="text-sm text-gray-500">{industry.count}+ clients</span>
+                <span className="text-sm text-gray-500">{industry.count}+ {t('references.clients')}</span>
               </div>
             ))}
           </div>
@@ -119,13 +120,13 @@ export const ReferencesPage = () => {
       <section className="py-20 bg-emas-light-bg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
-            title="Our Clients"
-            subtitle="Proud to partner with leading companies worldwide."
+            title={t('references.ourClientsTitle')}
+            subtitle={t('references.ourClientsSubtitle')}
           />
 
           {loading ? (
             <div className="flex justify-center py-20">
-              <LoadingSpinner size="lg" text="Loading references..." />
+              <LoadingSpinner size="lg" text={t('references.loadingReferences')} />
             </div>
           ) : error ? (
             <Alert type="error" message={error} className="mt-8" />
@@ -174,7 +175,7 @@ export const ReferencesPage = () => {
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-1 text-sm text-emas-soft-blue hover:text-emas-deep-blue transition-colors"
                       >
-                        Visit Website
+                        {t('references.visitWebsite')}
                         <ExternalLink className="w-3 h-3" />
                       </a>
                     </div>
@@ -191,12 +192,11 @@ export const ReferencesPage = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="text-6xl text-emas-soft-blue/20 mb-6">"</div>
           <blockquote className="text-2xl text-gray-700 italic leading-relaxed mb-8">
-            EMAS Metal has been our go-to partner for precision components for over 5 years.
-            Their quality is consistently excellent, and their team truly understands our requirements.
+            {t('references.testimonialQuote')}
           </blockquote>
           <div>
-            <div className="font-heading font-semibold text-emas-deep-blue">Thomas Weber</div>
-            <div className="text-gray-500">Procurement Manager, Industrial Automation Company</div>
+            <div className="font-heading font-semibold text-emas-deep-blue">{t('references.testimonialAuthor')}</div>
+            <div className="text-gray-500">{t('references.testimonialRole')}</div>
           </div>
         </div>
       </section>
@@ -205,14 +205,14 @@ export const ReferencesPage = () => {
       <section className="py-20 bg-gradient-to-br from-emas-deep-blue to-emas-soft-blue">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-3xl font-heading font-bold text-white mb-6">
-            Join Our Growing List of Satisfied Clients
+            {t('references.joinClients')}
           </h2>
           <p className="text-white/80 mb-8">
-            Experience the quality and reliability that keeps our clients coming back.
+            {t('references.joinClientsDesc')}
           </p>
           <Link to="/contact">
             <button className="px-8 py-4 bg-white text-emas-deep-blue font-medium rounded-lg hover:bg-gray-100 transition-colors inline-flex items-center gap-2">
-              Start a Conversation
+              {t('references.startConversation')}
               <ArrowRight className="w-5 h-5" />
             </button>
           </Link>

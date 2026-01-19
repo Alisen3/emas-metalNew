@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { ArrowRight, CheckCircle } from 'lucide-react';
 import { SectionHeader } from '../components/ui';
 
@@ -11,35 +12,37 @@ const machines = [
   { name: 'Zeiss CONTURA', type: 'CMM', specs: '1000x1200x600mm, VAST XXT', qty: 1 },
 ];
 
-const materials = [
-  { category: 'Aluminum Alloys', items: ['6061-T6', '7075-T6', '2024-T3', '5052-H32', 'MIC-6'] },
-  { category: 'Steel & Stainless', items: ['304/316 SS', '17-4 PH', '4140', '4340', 'A36'] },
-  { category: 'Exotic Alloys', items: ['Titanium Ti-6Al-4V', 'Inconel 625/718', 'Hastelloy', 'Monel'] },
-  { category: 'Plastics', items: ['Delrin/Acetal', 'PEEK', 'UHMW', 'Nylon', 'PTFE'] },
-  { category: 'Copper Alloys', items: ['C110', 'C360 Brass', 'Bronze', 'Beryllium Copper'] },
-];
-
 const tolerances = [
-  { feature: 'Linear Dimensions', standard: '±0.05mm', precision: '±0.01mm', highPrecision: '±0.005mm' },
-  { feature: 'Hole Diameters', standard: '±0.025mm', precision: '±0.013mm', highPrecision: '±0.005mm' },
-  { feature: 'Flatness', standard: '0.05mm', precision: '0.02mm', highPrecision: '0.01mm' },
-  { feature: 'Surface Finish', standard: 'Ra 3.2μm', precision: 'Ra 1.6μm', highPrecision: 'Ra 0.8μm' },
-  { feature: 'Concentricity', standard: '0.05mm', precision: '0.02mm', highPrecision: '0.01mm' },
-  { feature: 'Angularity', standard: '±0.5°', precision: '±0.1°', highPrecision: '±0.05°' },
-];
-
-const finishes = [
-  { name: 'As Machined', description: 'Standard machined finish, Ra 3.2μm typical' },
-  { name: 'Bead Blasted', description: 'Uniform matte texture, hides tool marks' },
-  { name: 'Anodizing Type II', description: 'Decorative anodizing for aluminum, various colors' },
-  { name: 'Anodizing Type III', description: 'Hard anodizing for wear resistance, 50+ HRC' },
-  { name: 'Powder Coating', description: 'Durable finish, wide color selection' },
-  { name: 'Passivation', description: 'Corrosion protection for stainless steel' },
-  { name: 'Electroless Nickel', description: 'Uniform plating, excellent corrosion resistance' },
-  { name: 'Black Oxide', description: 'Mild corrosion resistance, low reflection' },
+  { feature: 'linearDimensions', standard: '±0.05mm', precision: '±0.01mm', highPrecision: '±0.005mm' },
+  { feature: 'holeDiameters', standard: '±0.025mm', precision: '±0.013mm', highPrecision: '±0.005mm' },
+  { feature: 'flatness', standard: '0.05mm', precision: '0.02mm', highPrecision: '0.01mm' },
+  { feature: 'surfaceFinish', standard: 'Ra 3.2μm', precision: 'Ra 1.6μm', highPrecision: 'Ra 0.8μm' },
+  { feature: 'concentricity', standard: '0.05mm', precision: '0.02mm', highPrecision: '0.01mm' },
+  { feature: 'angularity', standard: '±0.5°', precision: '±0.1°', highPrecision: '±0.05°' },
 ];
 
 export const CapabilitiesPage = () => {
+  const { t } = useTranslation();
+
+  const materials = [
+    { category: t('capabilities.aluminumAlloys'), items: ['6061-T6', '7075-T6', '2024-T3', '5052-H32', 'MIC-6'] },
+    { category: t('capabilities.steelStainless'), items: ['304/316 SS', '17-4 PH', '4140', '4340', 'A36'] },
+    { category: t('capabilities.exoticAlloys'), items: ['Titanium Ti-6Al-4V', 'Inconel 625/718', 'Hastelloy', 'Monel'] },
+    { category: t('capabilities.plastics'), items: ['Delrin/Acetal', 'PEEK', 'UHMW', 'Nylon', 'PTFE'] },
+    { category: t('capabilities.copperAlloys'), items: ['C110', 'C360 Brass', 'Bronze', 'Beryllium Copper'] },
+  ];
+
+  const finishes = [
+    { name: t('capabilities.asMachined'), description: t('capabilities.asMachinedDesc') },
+    { name: t('capabilities.beadBlasted'), description: t('capabilities.beadBlastedDesc') },
+    { name: t('capabilities.anodizingTypeII'), description: t('capabilities.anodizingTypeIIDesc') },
+    { name: t('capabilities.anodizingTypeIII'), description: t('capabilities.anodizingTypeIIIDesc') },
+    { name: t('capabilities.powderCoating'), description: t('capabilities.powderCoatingDesc') },
+    { name: t('capabilities.passivation'), description: t('capabilities.passivationDesc') },
+    { name: t('capabilities.electrolessNickel'), description: t('capabilities.electrolessNickelDesc') },
+    { name: t('capabilities.blackOxide'), description: t('capabilities.blackOxideDesc') },
+  ];
+
   return (
     <div>
       {/* Hero */}
@@ -48,11 +51,10 @@ export const CapabilitiesPage = () => {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-heading font-bold text-emas-deep-blue mb-6">
-              Manufacturing Capabilities
+              {t('capabilities.pageTitle')}
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed">
-              State-of-the-art equipment and expertise to handle your most demanding
-              precision machining requirements.
+              {t('capabilities.pageSubtitle')}
             </p>
           </div>
         </div>
@@ -61,15 +63,15 @@ export const CapabilitiesPage = () => {
       {/* Equipment */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader title="Our Equipment" subtitle="Industry-leading CNC machines for precision and reliability." />
+          <SectionHeader title={t('capabilities.equipmentTitle')} subtitle={t('capabilities.equipmentSubtitle')} />
           <div className="mt-12 overflow-x-auto">
             <table className="w-full min-w-[600px]">
               <thead>
                 <tr className="border-b-2 border-emas-light-bg">
-                  <th className="text-left py-4 px-4 font-heading font-semibold text-emas-deep-blue">Machine</th>
-                  <th className="text-left py-4 px-4 font-heading font-semibold text-emas-deep-blue">Type</th>
-                  <th className="text-left py-4 px-4 font-heading font-semibold text-emas-deep-blue">Specifications</th>
-                  <th className="text-center py-4 px-4 font-heading font-semibold text-emas-deep-blue">Qty</th>
+                  <th className="text-left py-4 px-4 font-heading font-semibold text-emas-deep-blue">{t('capabilities.machine')}</th>
+                  <th className="text-left py-4 px-4 font-heading font-semibold text-emas-deep-blue">{t('capabilities.type')}</th>
+                  <th className="text-left py-4 px-4 font-heading font-semibold text-emas-deep-blue">{t('capabilities.specifications')}</th>
+                  <th className="text-center py-4 px-4 font-heading font-semibold text-emas-deep-blue">{t('capabilities.qty')}</th>
                 </tr>
               </thead>
               <tbody>
@@ -90,7 +92,7 @@ export const CapabilitiesPage = () => {
       {/* Materials */}
       <section className="py-20 bg-emas-light-bg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader title="Materials We Machine" subtitle="Expertise across a wide range of engineering materials." />
+          <SectionHeader title={t('capabilities.materialsTitle')} subtitle={t('capabilities.materialsSubtitle')} />
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
             {materials.map((cat) => (
               <div key={cat.category} className="bg-white rounded-xl p-6">
@@ -112,21 +114,21 @@ export const CapabilitiesPage = () => {
       {/* Tolerances */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader title="Tolerance Capabilities" subtitle="Precision levels to match your requirements." />
+          <SectionHeader title={t('capabilities.tolerancesTitle')} subtitle={t('capabilities.tolerancesSubtitle')} />
           <div className="mt-12 overflow-x-auto">
             <table className="w-full min-w-[600px]">
               <thead>
                 <tr className="border-b-2 border-emas-light-bg">
-                  <th className="text-left py-4 px-4 font-heading font-semibold text-emas-deep-blue">Feature</th>
-                  <th className="text-center py-4 px-4 font-heading font-semibold text-emas-deep-blue">Standard</th>
-                  <th className="text-center py-4 px-4 font-heading font-semibold text-emas-deep-blue">Precision</th>
-                  <th className="text-center py-4 px-4 font-heading font-semibold text-emas-deep-blue">High Precision</th>
+                  <th className="text-left py-4 px-4 font-heading font-semibold text-emas-deep-blue">{t('capabilities.feature')}</th>
+                  <th className="text-center py-4 px-4 font-heading font-semibold text-emas-deep-blue">{t('capabilities.standard')}</th>
+                  <th className="text-center py-4 px-4 font-heading font-semibold text-emas-deep-blue">{t('capabilities.precision')}</th>
+                  <th className="text-center py-4 px-4 font-heading font-semibold text-emas-deep-blue">{t('capabilities.highPrecision')}</th>
                 </tr>
               </thead>
               <tbody>
                 {tolerances.map((tol, index) => (
                   <tr key={tol.feature} className={index % 2 === 0 ? 'bg-emas-light-bg/50' : ''}>
-                    <td className="py-4 px-4 font-medium text-gray-800">{tol.feature}</td>
+                    <td className="py-4 px-4 font-medium text-gray-800">{t(`capabilities.${tol.feature}`)}</td>
                     <td className="py-4 px-4 text-center text-gray-600">{tol.standard}</td>
                     <td className="py-4 px-4 text-center text-gray-600">{tol.precision}</td>
                     <td className="py-4 px-4 text-center font-medium text-emas-soft-blue">{tol.highPrecision}</td>
@@ -141,7 +143,7 @@ export const CapabilitiesPage = () => {
       {/* Surface Finishes */}
       <section className="py-20 bg-emas-light-bg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader title="Surface Finishing Options" subtitle="Complete your parts with the right finish." />
+          <SectionHeader title={t('capabilities.finishesTitle')} subtitle={t('capabilities.finishesSubtitle')} />
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
             {finishes.map((finish) => (
               <div key={finish.name} className="bg-white rounded-xl p-6">
@@ -157,14 +159,14 @@ export const CapabilitiesPage = () => {
       <section className="py-20 bg-emas-deep-blue">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-3xl font-heading font-bold text-white mb-6">
-            Have a Complex Project?
+            {t('capabilities.complexProject')}
           </h2>
           <p className="text-white/80 mb-8">
-            Our engineering team can help with DFM and material selection.
+            {t('capabilities.complexProjectDesc')}
           </p>
           <Link to="/contact">
             <button className="px-8 py-4 bg-white text-emas-deep-blue font-medium rounded-lg hover:bg-gray-100 transition-colors inline-flex items-center gap-2">
-              Discuss Your Project
+              {t('capabilities.discussProject')}
               <ArrowRight className="w-5 h-5" />
             </button>
           </Link>

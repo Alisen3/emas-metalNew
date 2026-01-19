@@ -6,3 +6,4 @@ export { SectionHeader } from './SectionHeader';
 export { ServiceCard } from './ServiceCard';
 export { LoadingSpinner, LoadingOverlay } from './LoadingSpinner';
 export { Alert } from './Alert';
+export { LanguageSwitcher } from './LanguageSwitcher';
