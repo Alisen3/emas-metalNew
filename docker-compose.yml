@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: emas-postgres
+    environment:
+      POSTGRES_DB: emasdb
+      POSTGRES_USER: emas
+      POSTGRES_PASSWORD: emas_pass
+    ports:
+      - "5432:5432"
+    volumes:
+      - emas_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U emas -d emasdb"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: emas-metal-api
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      SPRING_PROFILES_ACTIVE: dev
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_NAME: emasdb
+      DB_USERNAME: emas
+      DB_PASSWORD: emas_pass
+      JWT_SECRET: dGhpcyBpcyBhIHZlcnkgc2VjdXJlIGp3dCBzZWNyZXQga2V5IGZvciBlbWFzIG1ldGFsIGFwcGxpY2F0aW9uIHVzZSBhIHN0cm9uZ2VyIG9uZSBpbiBwcm9kdWN0aW9u
+      JWT_EXPIRATION_MS: 86400000
+      ADMIN_USERNAME: admin
+      ADMIN_PASSWORD: admin123
+      ADMIN_EMAIL: admin@emasmetal.com
+      CORS_ORIGINS: http://localhost:5173,http://localhost:3000
+    ports:
+      - "8080:8080"
+    volumes:
+      - uploads:/app/uploads
+
+volumes:
+  emas_pgdata:
+  uploads:
