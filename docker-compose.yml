@@ -3,7 +3,6 @@ version: '3.8'
 services:
   postgres:
     image: postgres:16
-    container_name: emas-postgres
     environment:
       POSTGRES_DB: emasdb
       POSTGRES_USER: emas
@@ -22,7 +21,6 @@ services:
     build:
       context: ./backend
       dockerfile: Dockerfile
-    container_name: emas-metal-api
     depends_on:
       postgres:
         condition: service_healthy
