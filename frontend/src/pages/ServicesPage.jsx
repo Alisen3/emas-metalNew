@@ -1,82 +1,85 @@
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { Cog, Target, Zap, Wrench, Microscope, Package, ArrowRight, CheckCircle } from 'lucide-react';
 
-const services = [
-  {
-    icon: Cog,
-    title: 'CNC Milling',
-    description: 'High-precision 3, 4, and 5-axis milling for complex geometries and tight tolerances. Our advanced milling centers handle everything from simple prismatic parts to complex aerospace components.',
-    capabilities: [
-      '5-axis simultaneous machining',
-      'Tolerances to ±0.005mm',
-      'Work envelope up to 1500x800x700mm',
-      'High-speed machining up to 24,000 RPM',
-    ],
-    materials: ['Aluminum', 'Steel', 'Titanium', 'Inconel', 'Plastics'],
-  },
-  {
-    icon: Target,
-    title: 'CNC Turning',
-    description: 'Multi-axis turning centers with live tooling for complete rotational parts in a single setup. Ideal for shafts, bushings, and complex turned components.',
-    capabilities: [
-      'Live tooling capability',
-      'Bar feeding up to Ø65mm',
-      'Swiss-type turning for small parts',
-      'Y-axis milling operations',
-    ],
-    materials: ['Stainless Steel', 'Brass', 'Copper', 'Tool Steel', 'Aluminum'],
-  },
-  {
-    icon: Zap,
-    title: 'Rapid Prototyping',
-    description: 'Fast turnaround prototypes to validate designs before full production. Get functional metal prototypes in as little as 3-5 business days.',
-    capabilities: [
-      '48-hour quote turnaround',
-      'DFM feedback included',
-      'Material selection support',
-      'Finish options available',
-    ],
-    materials: ['All machinable metals', 'Engineering plastics'],
-  },
-  {
-    icon: Wrench,
-    title: 'Assembly Services',
-    description: 'Complete sub-assembly and final assembly services to reduce your supply chain complexity. We can handle mechanical assembly, press-fitting, and functional testing.',
-    capabilities: [
-      'Mechanical assembly',
-      'Press-fit operations',
-      'Thread inserts installation',
-      'Functional testing',
-    ],
-    materials: ['Customer-supplied components', 'Purchased parts'],
-  },
-  {
-    icon: Microscope,
-    title: 'Quality Inspection',
-    description: 'Comprehensive quality inspection using CMM and optical measurement systems. Full documentation including FAI reports, material certs, and dimensional reports.',
-    capabilities: [
-      'CMM inspection to 0.001mm',
-      'First Article Inspection (FAI)',
-      'Material certifications',
-      'Surface roughness testing',
-    ],
-    materials: ['All materials'],
-  },
-  {
-    icon: Package,
-    title: 'Surface Finishing',
-    description: 'Complete surface treatment options to meet your functional and aesthetic requirements. From anodizing to powder coating, we handle it all.',
-    capabilities: [
-      'Anodizing (Type II & III)',
-      'Powder coating',
-      'Passivation',
-      'Bead blasting',
-    ],
-    materials: ['Aluminum', 'Steel', 'Stainless Steel'],
-  },
-];
-
 export const ServicesPage = () => {
+  const { t } = useTranslation();
+
+  const services = [
+    {
+      icon: Cog,
+      title: t('services.cncMilling'),
+      description: t('services.cncMillingDescLong'),
+      capabilities: [
+        '5-axis simultaneous machining',
+        'Tolerances to ±0.005mm',
+        'Work envelope up to 1500x800x700mm',
+        'High-speed machining up to 24,000 RPM',
+      ],
+      materials: ['Aluminum', 'Steel', 'Titanium', 'Inconel', 'Plastics'],
+    },
+    {
+      icon: Target,
+      title: t('services.cncTurning'),
+      description: t('services.cncTurningDescLong'),
+      capabilities: [
+        'Live tooling capability',
+        'Bar feeding up to Ø65mm',
+        'Swiss-type turning for small parts',
+        'Y-axis milling operations',
+      ],
+      materials: ['Stainless Steel', 'Brass', 'Copper', 'Tool Steel', 'Aluminum'],
+    },
+    {
+      icon: Zap,
+      title: t('services.rapidPrototyping'),
+      description: t('services.rapidPrototypingDescLong'),
+      capabilities: [
+        '48-hour quote turnaround',
+        'DFM feedback included',
+        'Material selection support',
+        'Finish options available',
+      ],
+      materials: ['All machinable metals', 'Engineering plastics'],
+    },
+    {
+      icon: Wrench,
+      title: t('services.assemblyServices'),
+      description: t('services.assemblyServicesDescLong'),
+      capabilities: [
+        'Mechanical assembly',
+        'Press-fit operations',
+        'Thread inserts installation',
+        'Functional testing',
+      ],
+      materials: ['Customer-supplied components', 'Purchased parts'],
+    },
+    {
+      icon: Microscope,
+      title: t('services.qualityInspection'),
+      description: t('services.qualityInspectionDescLong'),
+      capabilities: [
+        'CMM inspection to 0.001mm',
+        'First Article Inspection (FAI)',
+        'Material certifications',
+        'Surface roughness testing',
+      ],
+      materials: ['All materials'],
+    },
+    {
+      icon: Package,
+      title: t('services.surfaceFinishing'),
+      description: t('services.surfaceFinishingDescLong'),
+      capabilities: [
+        'Anodizing (Type II & III)',
+        'Powder coating',
+        'Passivation',
+        'Bead blasting',
+      ],
+      materials: ['Aluminum', 'Steel', 'Stainless Steel'],
+    },
+  ];
+
   return (
     <div>
       {/* Hero */}
@@ -85,11 +88,10 @@ export const ServicesPage = () => {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-heading font-bold text-emas-deep-blue mb-6">
-              Precision Manufacturing Services
+              {t('services.pageTitle')}
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed">
-              From prototypes to production, we deliver precision-machined components
-              that meet the most demanding specifications across industries.
+              {t('services.pageSubtitle')}
             </p>
           </div>
         </div>
@@ -117,7 +119,7 @@ export const ServicesPage = () => {
                     <p className="text-gray-600 leading-relaxed mb-6">{service.description}</p>
 
                     <div className="mb-6">
-                      <h4 className="font-semibold text-emas-deep-blue mb-3">Capabilities:</h4>
+                      <h4 className="font-semibold text-emas-deep-blue mb-3">{t('services.capabilities')}:</h4>
                       <ul className="space-y-2">
                         {service.capabilities.map((cap) => (
                           <li key={cap} className="flex items-center gap-3 text-gray-600">
@@ -129,7 +131,7 @@ export const ServicesPage = () => {
                     </div>
 
                     <div>
-                      <h4 className="font-semibold text-emas-deep-blue mb-3">Materials:</h4>
+                      <h4 className="font-semibold text-emas-deep-blue mb-3">{t('services.materials')}:</h4>
                       <div className="flex flex-wrap gap-2">
                         {service.materials.map((mat) => (
                           <span key={mat} className="px-3 py-1 bg-emas-light-bg text-emas-deep-blue text-sm rounded-full">
@@ -156,14 +158,14 @@ export const ServicesPage = () => {
       <section className="py-20 bg-gradient-to-br from-emas-deep-blue to-emas-soft-blue">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-6">
-            Ready to Start Your Project?
+            {t('common.readyToStart')}
           </h2>
           <p className="text-lg text-white/80 mb-8">
-            Send us your drawings for a detailed quote within 48 hours.
+            {t('common.readyToStartDesc')}
           </p>
           <Link to="/contact">
             <button className="px-8 py-4 bg-white text-emas-deep-blue font-medium rounded-lg hover:bg-gray-100 transition-colors inline-flex items-center gap-2">
-              Request a Quote
+              {t('home.requestQuote')}
               <ArrowRight className="w-5 h-5" />
             </button>
           </Link>

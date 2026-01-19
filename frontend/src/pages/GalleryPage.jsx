@@ -1,10 +1,9 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { X, ArrowRight, ZoomIn } from 'lucide-react';
 import { LoadingSpinner, Alert } from '../components/ui';
 import { galleryApi, getImageUrl } from '../api';
-
-const categories = ['All', 'Milling', 'Turning', 'Parts', 'Factory'];
 
 // Fallback data
 const fallbackGallery = [
@@ -19,11 +18,20 @@ const fallbackGallery = [
 ];
 
 export const GalleryPage = () => {
+  const { t } = useTranslation();
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [lightboxItem, setLightboxItem] = useState(null);
+
+  const categories = [
+    { key: 'All', label: t('gallery.all') },
+    { key: 'Milling', label: t('gallery.milling') },
+    { key: 'Turning', label: t('gallery.turning') },
+    { key: 'Parts', label: t('gallery.parts') },
+    { key: 'Factory', label: t('gallery.factory') },
+  ];
 
   useEffect(() => {
     const fetchGallery = async () => {
@@ -66,11 +74,10 @@ export const GalleryPage = () => {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-heading font-bold text-emas-deep-blue mb-6">
-              Our Work Gallery
+              {t('gallery.pageTitle')}
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed">
-              Explore our precision-machined components, state-of-the-art equipment,
-              and modern manufacturing facility.
+              {t('gallery.pageSubtitle')}
             </p>
           </div>
         </div>
@@ -83,22 +90,22 @@ export const GalleryPage = () => {
           <div className="flex flex-wrap justify-center gap-3 mb-12">
             {categories.map((cat) => (
               <button
-                key={cat}
-                onClick={() => setSelectedCategory(cat)}
+                key={cat.key}
+                onClick={() => setSelectedCategory(cat.key)}
                 className={`px-5 py-2 rounded-full font-medium transition-all duration-200 ${
-                  selectedCategory === cat
+                  selectedCategory === cat.key
                     ? 'bg-emas-soft-blue text-white'
                     : 'bg-emas-light-bg text-gray-600 hover:bg-emas-soft-blue/10'
                 }`}
               >
-                {cat}
+                {cat.label}
               </button>
             ))}
           </div>
 
           {loading ? (
             <div className="flex justify-center py-20">
-              <LoadingSpinner size="lg" text="Loading gallery..." />
+              <LoadingSpinner size="lg" text={t('gallery.loadingGallery')} />
             </div>
           ) : error ? (
             <Alert type="error" message={error} />
@@ -147,7 +154,7 @@ export const GalleryPage = () => {
 
           {filteredItems.length === 0 && !loading && (
             <div className="text-center py-12">
-              <p className="text-gray-500">No items found in this category.</p>
+              <p className="text-gray-500">{t('gallery.noItems')}</p>
             </div>
           )}
         </div>
@@ -162,7 +169,7 @@ export const GalleryPage = () => {
           <button
             onClick={closeLightbox}
             className="absolute top-4 right-4 w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-white/20 transition-colors"
-            aria-label="Close lightbox"
+            aria-label={t('gallery.closeLightbox')}
           >
             <X className="w-6 h-6" />
           </button>
@@ -205,14 +212,14 @@ export const GalleryPage = () => {
       <section className="py-20 bg-emas-light-bg">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-3xl font-heading font-bold text-emas-deep-blue mb-6">
-            Ready to See Your Parts Made Here?
+            {t('gallery.readyToSee')}
           </h2>
           <p className="text-gray-600 mb-8">
-            Send us your drawings and we'll provide a detailed quote within 48 hours.
+            {t('gallery.readyToSeeDesc')}
           </p>
           <Link to="/contact">
             <button className="px-8 py-4 bg-emas-cta-blue text-white font-medium rounded-lg hover:bg-emas-deep-blue transition-colors inline-flex items-center gap-2">
-              Request a Quote
+              {t('gallery.requestQuote')}
               <ArrowRight className="w-5 h-5" />
             </button>
           </Link>

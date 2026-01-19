@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import {
   MapPin,
   Phone,
@@ -8,26 +9,27 @@ import {
   ArrowUpRight
 } from 'lucide-react';
 
-const quickLinks = [
-  { name: 'About Us', path: '/about' },
-  { name: 'Services', path: '/services' },
-  { name: 'Capabilities', path: '/capabilities' },
-  { name: 'References', path: '/references' },
-  { name: 'Gallery', path: '/gallery' },
-  { name: 'Contact', path: '/contact' },
-];
-
-const services = [
-  'CNC Milling',
-  'CNC Turning',
-  'Multi-Axis Machining',
-  'Precision Grinding',
-  'Quality Inspection',
-  'Assembly Services',
-];
-
 export const Footer = () => {
+  const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
+
+  const quickLinks = [
+    { name: t('nav.about'), path: '/about' },
+    { name: t('nav.services'), path: '/services' },
+    { name: t('nav.capabilities'), path: '/capabilities' },
+    { name: t('nav.references'), path: '/references' },
+    { name: t('nav.gallery'), path: '/gallery' },
+    { name: t('nav.contact'), path: '/contact' },
+  ];
+
+  const services = [
+    t('footer.cncMilling'),
+    t('footer.cncTurning'),
+    t('footer.multiAxisMachining'),
+    t('footer.precisionGrinding'),
+    t('footer.qualityInspection'),
+    t('footer.assemblyServices'),
+  ];
 
   return (
     <footer className="bg-emas-deep-blue text-white">
@@ -50,8 +52,7 @@ export const Footer = () => {
               </div>
             </Link>
             <p className="text-gray-300 text-sm leading-relaxed mb-6">
-              Delivering precision CNC machining solutions for industries worldwide.
-              ISO 9001:2015 certified with over 15 years of manufacturing excellence.
+              {t('footer.companyDesc')}
             </p>
             <div className="flex gap-3">
               <a
@@ -68,7 +69,7 @@ export const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-heading font-semibold text-lg mb-6">Quick Links</h3>
+            <h3 className="font-heading font-semibold text-lg mb-6">{t('footer.quickLinks')}</h3>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.path}>
@@ -86,7 +87,7 @@ export const Footer = () => {
 
           {/* Services */}
           <div>
-            <h3 className="font-heading font-semibold text-lg mb-6">Services</h3>
+            <h3 className="font-heading font-semibold text-lg mb-6">{t('footer.services')}</h3>
             <ul className="space-y-3">
               {services.map((service) => (
                 <li key={service}>
@@ -98,13 +99,12 @@ export const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h3 className="font-heading font-semibold text-lg mb-6">Contact</h3>
+            <h3 className="font-heading font-semibold text-lg mb-6">{t('footer.contact')}</h3>
             <ul className="space-y-4">
               <li className="flex gap-3">
                 <MapPin className="w-5 h-5 text-emas-soft-blue flex-shrink-0 mt-0.5" />
-                <span className="text-gray-300 text-sm">
-                  Industrial Zone A, Block 7<br />
-                  34956 Istanbul, Turkey
+                <span className="text-gray-300 text-sm whitespace-pre-line">
+                  {t('contact.addressValue')}
                 </span>
               </li>
               <li className="flex gap-3">
@@ -121,9 +121,8 @@ export const Footer = () => {
               </li>
               <li className="flex gap-3">
                 <Clock className="w-5 h-5 text-emas-soft-blue flex-shrink-0" />
-                <span className="text-gray-300 text-sm">
-                  Mon - Fri: 08:00 - 18:00<br />
-                  Sat: 08:00 - 13:00
+                <span className="text-gray-300 text-sm whitespace-pre-line">
+                  {t('contact.hoursValue')}
                 </span>
               </li>
             </ul>
@@ -136,14 +135,14 @@ export const Footer = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-400 text-sm">
-              &copy; {currentYear} EMAS Metal. All rights reserved.
+              &copy; {currentYear} EMAS Metal. {t('footer.allRightsReserved')}
             </p>
             <div className="flex gap-6">
               <Link to="/privacy" className="text-gray-400 text-sm hover:text-white transition-colors">
-                Privacy Policy
+                {t('footer.privacyPolicy')}
               </Link>
               <Link to="/terms" className="text-gray-400 text-sm hover:text-white transition-colors">
-                Terms of Service
+                {t('footer.termsOfService')}
               </Link>
             </div>
           </div>

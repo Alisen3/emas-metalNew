@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import {
   ArrowRight,
   Cog,
@@ -11,62 +12,64 @@ import {
 import { HeroSection } from '../components/sections';
 import { SectionHeader, ServiceCard, PrimaryButton, SecondaryButton } from '../components/ui';
 
-const services = [
-  {
-    icon: Cog,
-    title: 'CNC Milling',
-    description: 'High-precision 3, 4, and 5-axis milling for complex geometries and tight tolerances.',
-    features: ['5-axis simultaneous', 'Up to ±0.005mm tolerance', 'Large format capability'],
-  },
-  {
-    icon: Target,
-    title: 'CNC Turning',
-    description: 'Multi-axis turning centers for rotational parts with live tooling capabilities.',
-    features: ['Live tooling', 'Bar feeding', 'Swiss-type turning'],
-  },
-  {
-    icon: Zap,
-    title: 'Rapid Prototyping',
-    description: 'Fast turnaround prototypes to validate designs before full production.',
-    features: ['48-hour quotes', 'DFM feedback', 'Material selection support'],
-  },
-  {
-    icon: Gauge,
-    title: 'Quality Inspection',
-    description: 'CMM inspection and comprehensive quality documentation for all parts.',
-    features: ['Full CMM inspection', 'First article reports', 'Material certifications'],
-  },
-];
-
-const industries = [
-  'Aerospace & Defense',
-  'Automotive',
-  'Medical Devices',
-  'Energy & Power',
-  'Industrial Machinery',
-  'Electronics',
-];
-
-const whyChooseUs = [
-  {
-    title: 'Precision Engineering',
-    description: 'Tolerances down to ±0.005mm with advanced metrology verification.',
-  },
-  {
-    title: 'Fast Turnaround',
-    description: 'From quote to delivery in as little as 5 business days.',
-  },
-  {
-    title: 'Material Expertise',
-    description: 'Aluminum, steel, titanium, Inconel, plastics, and more.',
-  },
-  {
-    title: 'Quality Certified',
-    description: 'ISO 9001:2015 certified with full traceability.',
-  },
-];
-
 export const HomePage = () => {
+  const { t } = useTranslation();
+
+  const services = [
+    {
+      icon: Cog,
+      title: t('services.cncMilling'),
+      description: t('services.cncMillingDesc'),
+      features: [t('services.fiveAxisSimultaneous'), t('services.toleranceTo'), t('services.largeFormat')],
+    },
+    {
+      icon: Target,
+      title: t('services.cncTurning'),
+      description: t('services.cncTurningDesc'),
+      features: [t('services.liveTooling'), t('services.barFeeding'), t('services.swissTypeTurning')],
+    },
+    {
+      icon: Zap,
+      title: t('services.rapidPrototyping'),
+      description: t('services.rapidPrototypingDesc'),
+      features: [t('services.48HourQuotes'), t('services.dfmFeedback'), t('services.materialSelectionSupport')],
+    },
+    {
+      icon: Gauge,
+      title: t('services.qualityInspection'),
+      description: t('services.qualityInspectionDesc'),
+      features: [t('services.fullCmmInspection'), t('services.firstArticleReports'), t('services.materialCertifications')],
+    },
+  ];
+
+  const industries = [
+    t('industries.aerospaceDefense'),
+    t('industries.automotive'),
+    t('industries.medicalDevices'),
+    t('industries.energyPower'),
+    t('industries.industrialMachinery'),
+    t('industries.electronics'),
+  ];
+
+  const whyChooseUs = [
+    {
+      title: t('common.precisionEngineering'),
+      description: t('common.precisionEngineeringDesc'),
+    },
+    {
+      title: t('common.fastTurnaround'),
+      description: t('common.fastTurnaroundDesc'),
+    },
+    {
+      title: t('common.materialExpertise'),
+      description: t('common.materialExpertiseDesc'),
+    },
+    {
+      title: t('common.qualityCertified'),
+      description: t('common.qualityCertifiedDesc'),
+    },
+  ];
+
   return (
     <div>
       {/* Hero Section */}
@@ -76,8 +79,8 @@ export const HomePage = () => {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
-            title="Precision Manufacturing Services"
-            subtitle="From prototypes to production runs, we deliver quality machined components with consistency and precision."
+            title={t('home.servicesTitle')}
+            subtitle={t('home.servicesSubtitle')}
           />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
@@ -92,7 +95,7 @@ export const HomePage = () => {
           <div className="text-center mt-12">
             <Link to="/services">
               <PrimaryButton rightIcon={<ArrowRight className="w-5 h-5" />}>
-                View All Services
+                {t('home.viewAllServices')}
               </PrimaryButton>
             </Link>
           </div>
@@ -105,8 +108,8 @@ export const HomePage = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <SectionHeader
-                title="Why Choose EMAS Metal?"
-                subtitle="We combine decades of machining expertise with modern technology to deliver exceptional results."
+                title={t('home.whyChooseTitle')}
+                subtitle={t('home.whyChooseSubtitle')}
                 align="left"
               />
 
@@ -127,7 +130,7 @@ export const HomePage = () => {
               <div className="mt-10">
                 <Link to="/about">
                   <SecondaryButton rightIcon={<ArrowRight className="w-5 h-5" />}>
-                    Learn More About Us
+                    {t('home.learnMoreAboutUs')}
                   </SecondaryButton>
                 </Link>
               </div>
@@ -139,7 +142,7 @@ export const HomePage = () => {
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="text-center text-white">
                     <div className="text-6xl font-heading font-bold mb-2">15+</div>
-                    <div className="text-lg opacity-90">Years of Excellence</div>
+                    <div className="text-lg opacity-90">{t('home.yearsOfExcellence')}</div>
                   </div>
                 </div>
               </div>
@@ -151,7 +154,7 @@ export const HomePage = () => {
                   </div>
                   <div>
                     <div className="text-2xl font-heading font-bold text-emas-deep-blue">200+</div>
-                    <div className="text-sm text-gray-500">Satisfied Clients</div>
+                    <div className="text-sm text-gray-500">{t('home.satisfiedClients')}</div>
                   </div>
                 </div>
               </div>
@@ -164,8 +167,8 @@ export const HomePage = () => {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
-            title="Industries We Serve"
-            subtitle="Trusted by leading companies across diverse sectors for mission-critical components."
+            title={t('home.industriesTitle')}
+            subtitle={t('home.industriesSubtitle')}
           />
 
           <div className="flex flex-wrap justify-center gap-4 mt-12">
@@ -182,7 +185,7 @@ export const HomePage = () => {
           <div className="text-center mt-12">
             <Link to="/references">
               <SecondaryButton rightIcon={<ArrowRight className="w-5 h-5" />}>
-                View Our References
+                {t('home.viewOurReferences')}
               </SecondaryButton>
             </Link>
           </div>
@@ -193,21 +196,20 @@ export const HomePage = () => {
       <section className="py-20 bg-gradient-to-br from-emas-deep-blue to-emas-soft-blue">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-6">
-            Ready to Start Your Project?
+            {t('home.readyToStart')}
           </h2>
           <p className="text-lg text-white/80 mb-8 max-w-2xl mx-auto">
-            Send us your drawings and specifications. Our engineering team will
-            provide a detailed quote within 48 hours.
+            {t('home.readyToStartDesc')}
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link to="/contact">
               <button className="px-8 py-4 bg-white text-emas-deep-blue font-medium rounded-lg hover:bg-gray-100 transition-colors">
-                Request a Quote
+                {t('home.requestQuote')}
               </button>
             </Link>
             <Link to="/capabilities">
               <button className="px-8 py-4 bg-transparent text-white font-medium rounded-lg border-2 border-white/50 hover:bg-white/10 transition-colors">
-                View Capabilities
+                {t('home.viewCapabilities')}
               </button>
             </Link>
           </div>

@@ -1,16 +1,11 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { MapPin, Phone, Mail, Clock, Send, CheckCircle } from 'lucide-react';
 import { Input, Textarea, FileUpload, PrimaryButton, Alert } from '../components/ui';
 import { contactApi } from '../api';
 
-const contactInfo = [
-  { icon: MapPin, label: 'Address', value: 'Industrial Zone A, Block 7\n34956 Istanbul, Turkey' },
-  { icon: Phone, label: 'Phone', value: '+90 216 555 1234', href: 'tel:+902165551234' },
-  { icon: Mail, label: 'Email', value: 'info@emasmetal.com', href: 'mailto:info@emasmetal.com' },
-  { icon: Clock, label: 'Hours', value: 'Mon-Fri: 08:00-18:00\nSat: 08:00-13:00' },
-];
-
 export const ContactPage = () => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: '',
     company: '',
@@ -23,23 +18,30 @@ export const ContactPage = () => {
   const [submitStatus, setSubmitStatus] = useState('idle');
   const [submitMessage, setSubmitMessage] = useState('');
 
+  const contactInfo = [
+    { icon: MapPin, label: t('contact.address'), value: t('contact.addressValue') },
+    { icon: Phone, label: t('contact.phone'), value: '+90 216 555 1234', href: 'tel:+902165551234' },
+    { icon: Mail, label: t('contact.email'), value: 'info@emasmetal.com', href: 'mailto:info@emasmetal.com' },
+    { icon: Clock, label: t('contact.hours'), value: t('contact.hoursValue') },
+  ];
+
   const validateForm = () => {
     const newErrors = {};
 
     if (!formData.name.trim()) {
-      newErrors.name = 'Name is required';
+      newErrors.name = t('contact.nameRequired');
     }
 
     if (!formData.email.trim()) {
-      newErrors.email = 'Email is required';
+      newErrors.email = t('contact.emailRequired');
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = 'Please enter a valid email address';
+      newErrors.email = t('contact.emailInvalid');
     }
 
     if (!formData.message.trim()) {
-      newErrors.message = 'Message is required';
+      newErrors.message = t('contact.messageRequired');
     } else if (formData.message.trim().length < 10) {
-      newErrors.message = 'Message must be at least 10 characters';
+      newErrors.message = t('contact.messageMinLength');
     }
 
     setErrors(newErrors);
@@ -49,7 +51,6 @@ export const ContactPage = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-    // Clear error when user starts typing
     if (errors[name]) {
       setErrors((prev) => ({ ...prev, [name]: undefined }));
     }
@@ -74,14 +75,13 @@ export const ContactPage = () => {
       const response = await contactApi.submit(request, attachment || undefined);
 
       setSubmitStatus('success');
-      setSubmitMessage(response.message || 'Thank you for your message. We will get back to you within 24 hours.');
+      setSubmitMessage(response.message || t('contact.successMessage'));
 
-      // Reset form
       setFormData({ name: '', company: '', email: '', phone: '', message: '' });
       setAttachment(null);
     } catch (err) {
       setSubmitStatus('error');
-      setSubmitMessage(err.message || 'Failed to send message. Please try again.');
+      setSubmitMessage(err.message || t('contact.errorMessage'));
     }
   };
 
@@ -93,11 +93,10 @@ export const ContactPage = () => {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-heading font-bold text-emas-deep-blue mb-6">
-              Get in Touch
+              {t('contact.pageTitle')}
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed">
-              Ready to start your project? Have questions about our capabilities?
-              We're here to help. Send us your drawings for a detailed quote.
+              {t('contact.pageSubtitle')}
             </p>
           </div>
         </div>
@@ -110,7 +109,7 @@ export const ContactPage = () => {
             {/* Contact Info */}
             <div className="lg:col-span-1">
               <h2 className="text-2xl font-heading font-bold text-emas-deep-blue mb-6">
-                Contact Information
+                {t('contact.contactInfo')}
               </h2>
               <div className="space-y-6">
                 {contactInfo.map((item) => {
@@ -143,7 +142,7 @@ export const ContactPage = () => {
                 <div className="w-full h-full flex items-center justify-center text-gray-400">
                   <div className="text-center">
                     <MapPin className="w-12 h-12 mx-auto mb-2 opacity-50" />
-                    <p className="text-sm">Interactive map</p>
+                    <p className="text-sm">{t('contact.interactiveMap')}</p>
                   </div>
                 </div>
               </div>
@@ -153,11 +152,10 @@ export const ContactPage = () => {
             <div className="lg:col-span-2">
               <div className="bg-emas-light-bg rounded-2xl p-8">
                 <h2 className="text-2xl font-heading font-bold text-emas-deep-blue mb-2">
-                  Request a Quote
+                  {t('contact.requestQuote')}
                 </h2>
                 <p className="text-gray-600 mb-8">
-                  Fill out the form below and attach your technical drawings.
-                  We'll respond within 48 hours.
+                  {t('contact.formSubtitle')}
                 </p>
 
                 {submitStatus === 'success' ? (
@@ -166,14 +164,14 @@ export const ContactPage = () => {
                       <CheckCircle className="w-8 h-8 text-green-600" />
                     </div>
                     <h3 className="text-xl font-heading font-semibold text-emas-deep-blue mb-2">
-                      Message Sent!
+                      {t('contact.messageSent')}
                     </h3>
                     <p className="text-gray-600 mb-6">{submitMessage}</p>
                     <button
                       onClick={() => setSubmitStatus('idle')}
                       className="text-emas-soft-blue hover:text-emas-deep-blue font-medium"
                     >
-                      Send another message
+                      {t('contact.sendAnother')}
                     </button>
                   </div>
                 ) : (
@@ -188,7 +186,7 @@ export const ContactPage = () => {
 
                     <div className="grid md:grid-cols-2 gap-6">
                       <Input
-                        label="Full Name"
+                        label={t('contact.fullName')}
                         name="name"
                         value={formData.name}
                         onChange={handleChange}
@@ -197,7 +195,7 @@ export const ContactPage = () => {
                         placeholder="John Smith"
                       />
                       <Input
-                        label="Company"
+                        label={t('contact.company')}
                         name="company"
                         value={formData.company}
                         onChange={handleChange}
@@ -207,7 +205,7 @@ export const ContactPage = () => {
 
                     <div className="grid md:grid-cols-2 gap-6">
                       <Input
-                        label="Email"
+                        label={t('contact.emailLabel')}
                         name="email"
                         type="email"
                         value={formData.email}
@@ -217,7 +215,7 @@ export const ContactPage = () => {
                         placeholder="john@company.com"
                       />
                       <Input
-                        label="Phone"
+                        label={t('contact.phoneLabel')}
                         name="phone"
                         type="tel"
                         value={formData.phone}
@@ -227,20 +225,20 @@ export const ContactPage = () => {
                     </div>
 
                     <Textarea
-                      label="Project Details"
+                      label={t('contact.projectDetails')}
                       name="message"
                       value={formData.message}
                       onChange={handleChange}
                       error={errors.message}
                       required
-                      placeholder="Describe your project, quantities, materials, tolerances, and timeline requirements..."
+                      placeholder={t('contact.projectPlaceholder')}
                       rows={5}
                     />
 
                     <FileUpload
-                      label="Attach Technical Drawings"
+                      label={t('contact.attachDrawings')}
                       onFileSelect={setAttachment}
-                      helperText="Upload PDF, DWG, DXF, STEP, or image files (max 20MB)"
+                      helperText={t('contact.attachHelperText')}
                     />
 
                     <PrimaryButton
@@ -249,7 +247,7 @@ export const ContactPage = () => {
                       leftIcon={<Send className="w-5 h-5" />}
                       className="w-full md:w-auto"
                     >
-                      {submitStatus === 'loading' ? 'Sending...' : 'Send Message'}
+                      {submitStatus === 'loading' ? t('contact.sending') : t('contact.sendMessage')}
                     </PrimaryButton>
                   </form>
                 )}
@@ -263,12 +261,10 @@ export const ContactPage = () => {
       <section className="py-16 bg-emas-deep-blue">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-2xl font-heading font-bold text-white mb-4">
-            Our Response Guarantee
+            {t('contact.responseGuarantee')}
           </h2>
           <p className="text-white/80">
-            We understand that time is critical. That's why we commit to responding
-            to all quote requests within 48 business hours, with detailed pricing
-            and lead time information.
+            {t('contact.responseGuaranteeDesc')}
           </p>
         </div>
       </section>

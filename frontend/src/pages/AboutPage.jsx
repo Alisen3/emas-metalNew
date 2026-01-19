@@ -1,21 +1,24 @@
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { Target, Heart, Users, TrendingUp, Award } from 'lucide-react';
 import { SectionHeader, PrimaryButton } from '../components/ui';
 
-const values = [
-  { icon: Target, title: 'Precision', description: 'Every micron matters. We pursue perfection in every component.' },
-  { icon: Heart, title: 'Integrity', description: 'Honest communication, transparent pricing, reliable delivery.' },
-  { icon: Users, title: 'Partnership', description: 'We view every client relationship as a long-term partnership.' },
-  { icon: TrendingUp, title: 'Innovation', description: 'Continuously investing in technology to stay ahead.' },
-];
-
-const certifications = [
-  'ISO 9001:2015 Quality Management',
-  'ISO 14001:2015 Environmental Management',
-  'AS9100D Aerospace Quality',
-];
-
 export const AboutPage = () => {
+  const { t } = useTranslation();
+
+  const values = [
+    { icon: Target, title: t('about.precision'), description: t('about.precisionDesc') },
+    { icon: Heart, title: t('about.integrity'), description: t('about.integrityDesc') },
+    { icon: Users, title: t('about.partnership'), description: t('about.partnershipDesc') },
+    { icon: TrendingUp, title: t('about.innovation'), description: t('about.innovationDesc') },
+  ];
+
+  const certifications = [
+    'ISO 9001:2015 Quality Management',
+    'ISO 14001:2015 Environmental Management',
+    'AS9100D Aerospace Quality',
+  ];
+
   return (
     <div>
       {/* Hero */}
@@ -24,11 +27,10 @@ export const AboutPage = () => {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-heading font-bold text-emas-deep-blue mb-6">
-              Engineering Excellence Since 2009
+              {t('about.pageTitle')}
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed">
-              From a small workshop to a leading precision machining facility, our journey
-              has been defined by commitment to quality and customer satisfaction.
+              {t('about.pageSubtitle')}
             </p>
           </div>
         </div>
@@ -39,25 +41,17 @@ export const AboutPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-heading font-bold text-emas-deep-blue mb-6">Our Story</h2>
+              <h2 className="text-3xl font-heading font-bold text-emas-deep-blue mb-6">{t('about.ourStory')}</h2>
               <div className="space-y-4 text-gray-600 leading-relaxed">
-                <p>
-                  EMAS Metal was founded in 2009 by mechanical engineers with a passion for
-                  precision manufacturing. What began as a modest workshop has grown into a
-                  state-of-the-art facility serving clients across Europe.
-                </p>
-                <p>
-                  Today, we operate from a modern 2,500m&sup2; facility equipped with the latest
-                  CNC technology. Our team of 50+ skilled professionals is dedicated to
-                  exceeding customer expectations.
-                </p>
+                <p>{t('about.storyP1')}</p>
+                <p>{t('about.storyP2')}</p>
               </div>
             </div>
             <div className="relative">
               <div className="aspect-[4/3] bg-gradient-to-br from-emas-soft-blue to-emas-deep-blue rounded-2xl flex items-center justify-center">
                 <div className="text-center text-white">
                   <div className="text-6xl font-heading font-bold mb-2">15+</div>
-                  <div className="text-lg opacity-90">Years of Excellence</div>
+                  <div className="text-lg opacity-90">{t('about.yearsOfExcellence')}</div>
                 </div>
               </div>
             </div>
@@ -68,7 +62,7 @@ export const AboutPage = () => {
       {/* Values */}
       <section className="py-20 bg-emas-light-bg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader title="Our Core Values" subtitle="The principles that guide everything we do." />
+          <SectionHeader title={t('about.coreValuesTitle')} subtitle={t('about.coreValuesSubtitle')} />
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
             {values.map((value) => {
               const Icon = value.icon;
@@ -89,7 +83,7 @@ export const AboutPage = () => {
       {/* Certifications */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader title="Certifications & Quality" subtitle="Committed to the highest industry standards." />
+          <SectionHeader title={t('about.certificationsTitle')} subtitle={t('about.certificationsSubtitle')} />
           <div className="grid md:grid-cols-3 gap-6 mt-12">
             {certifications.map((cert) => (
               <div key={cert} className="flex items-center gap-4 p-6 bg-emas-light-bg rounded-xl">
@@ -104,13 +98,13 @@ export const AboutPage = () => {
       {/* CTA */}
       <section className="py-20 bg-emas-deep-blue">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-heading font-bold text-white mb-6">Partner With Us</h2>
+          <h2 className="text-3xl font-heading font-bold text-white mb-6">{t('about.partnerWithUs')}</h2>
           <p className="text-white/80 mb-8">
-            Experience the EMAS Metal difference. Let's discuss your next project.
+            {t('about.partnerWithUsDesc')}
           </p>
           <Link to="/contact">
             <PrimaryButton className="bg-white text-emas-deep-blue hover:bg-gray-100">
-              Get in Touch
+              {t('about.getInTouch')}
             </PrimaryButton>
           </Link>
         </div>
