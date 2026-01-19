@@ -23,6 +23,23 @@ spring:
       max-file-size: 20MB
       max-request-size: 25MB
 
+  # Mail Configuration (SMTP)
+  mail:
+    host: ${MAIL_HOST:smtp.gmail.com}
+    port: ${MAIL_PORT:587}
+    username: ${MAIL_USERNAME:}
+    password: ${MAIL_PASSWORD:}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+          connectiontimeout: 5000
+          timeout: 5000
+          writetimeout: 5000
+
   profiles:
     active: ${SPRING_PROFILES_ACTIVE:dev}
 
@@ -33,6 +50,15 @@ server:
 jwt:
   secret: ${JWT_SECRET:dGhpcyBpcyBhIHZlcnkgc2VjdXJlIGp3dCBzZWNyZXQga2V5IGZvciBlbWFzIG1ldGFsIGFwcGxpY2F0aW9uIHVzZSBhIHN0cm9uZ2VyIG9uZSBpbiBwcm9kdWN0aW9u}
   expiration-ms: ${JWT_EXPIRATION_MS:86400000}
+
+# App Configuration
+app:
+  mail:
+    enabled: ${MAIL_ENABLED:false}
+    to: ${MAIL_TO:info@emasmetal.com}
+    from: ${MAIL_FROM:noreply@emasmetal.com}
+  file:
+    upload-dir: ${UPLOAD_DIR:./uploads}
 
 # File Storage Configuration
 file:
