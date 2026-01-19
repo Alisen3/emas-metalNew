@@ -137,14 +137,19 @@ export const ContactPage = () => {
                 })}
               </div>
 
-              {/* Map placeholder */}
-              <div className="mt-8 aspect-[4/3] bg-emas-light-bg rounded-xl overflow-hidden">
-                <div className="w-full h-full flex items-center justify-center text-gray-400">
-                  <div className="text-center">
-                    <MapPin className="w-12 h-12 mx-auto mb-2 opacity-50" />
-                    <p className="text-sm">{t('contact.interactiveMap')}</p>
-                  </div>
-                </div>
+              {/* Interactive Map */}
+              <div className="mt-8 aspect-[4/3] bg-emas-light-bg rounded-xl overflow-hidden shadow-lg">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3011.6504900397887!2d29.1553!3d40.9097!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDU0JzM1LjAiTiAyOcKwMDknMTkuMSJF!5e0!3m2!1str!2str!4v1699999999999!5m2!1str!2str"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title={t('contact.interactiveMap')}
+                  className="w-full h-full"
+                />
               </div>
             </div>
 
