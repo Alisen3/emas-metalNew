@@ -5,7 +5,8 @@ import { X, ArrowRight, ZoomIn } from 'lucide-react';
 import { LoadingSpinner, Alert } from '../components/ui';
 import { galleryApi, getImageUrl } from '../api';
 
-// Fallback data
+// Galeri fotoğrafları - Fotoğraflarınızı frontend/public/images/gallery/ klasörüne koyun
+// Dosya isimleri: milling-1.jpg, milling-2.jpg, turning-1.jpg, parts-1.jpg vb.
 const fallbackGallery = [
   { id: '1', title: '5-Axis CNC Milling Center', category: 'Milling', imageUrl: '/images/IMG_1130.jpg', description: 'DMG MORI DMU 80 eVo', createdAt: '' },
   { id: '2', title: 'Precision Turning Operation', category: 'Turning', imageUrl: '/images/IMG_1131.jpg', description: 'High-precision turning', createdAt: '' },
@@ -15,6 +16,21 @@ const fallbackGallery = [
   { id: '6', title: 'Swiss-Type Turning', category: 'Turning', imageUrl: '/images/IMG_1136.jpg', description: 'Small precision parts', createdAt: '' },
   { id: '7', title: 'Aluminum Housing', category: 'Parts', imageUrl: '/images/IMG_1136.jpg', description: 'Anodized enclosure', createdAt: '' },
   { id: '8', title: 'Quality Lab', category: 'Factory', imageUrl: '/images/IMG_1142.jpg', description: 'CMM inspection room', createdAt: '' },
+
+  // Freze (Milling) Kategorisi
+  { id: '1', title: '5 Eksenli CNC Freze Merkezi', category: 'Milling', imageUrl: '/images/gallery/milling-1.jpg', description: 'Yüksek hassasiyetli 5 eksenli işleme merkezi', createdAt: '' },
+  { id: '2', title: 'CNC Freze İşlemi', category: 'Milling', imageUrl: '/images/gallery/milling-2.jpg', description: 'Karmaşık geometri frezeleme', createdAt: '' },
+  { id: '3', title: 'Dikey İşleme Merkezi', category: 'Milling', imageUrl: '/images/gallery/milling-3.jpg', description: 'Hassas dikey freze operasyonu', createdAt: '' },
+
+  // Dönerşaft (Turning) Kategorisi
+  { id: '4', title: 'CNC Torna İşlemi', category: 'Turning', imageUrl: '/images/gallery/turning-1.jpg', description: 'Hassas torna operasyonu', createdAt: '' },
+  { id: '5', title: 'Döner Mil Üretimi', category: 'Turning', imageUrl: '/images/gallery/turning-2.jpg', description: 'Yüksek toleranslı şaft üretimi', createdAt: '' },
+  { id: '6', title: 'Swiss Tipi Torna', category: 'Turning', imageUrl: '/images/gallery/turning-3.jpg', description: 'Küçük hassas parça üretimi', createdAt: '' },
+
+  // Parçalar (Parts) Kategorisi
+  { id: '7', title: 'İşlenmiş Alüminyum Parça', category: 'Parts', imageUrl: '/images/gallery/parts-1.jpg', description: 'CNC ile işlenmiş alüminyum komponent', createdAt: '' },
+  { id: '8', title: 'Hassas Metal Parça', category: 'Parts', imageUrl: '/images/gallery/parts-2.jpg', description: 'Yüksek toleranslı metal parça', createdAt: '' },
+  { id: '9', title: 'Özel Üretim Parça', category: 'Parts', imageUrl: '/images/gallery/parts-3.jpg', description: 'Müşteri isteğine göre özel üretim', createdAt: '' },
 ];
 
 export const GalleryPage = () => {
