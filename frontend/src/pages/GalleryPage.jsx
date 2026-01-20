@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { X, ArrowRight, ZoomIn } from 'lucide-react';
-import { LoadingSpinner, Alert } from '../components/ui';
-import { galleryApi, getImageUrl } from '../api';
+import { LoadingSpinner } from '../components/ui';
+import { getImageUrl } from '../api';
 
 // Galeri fotoğrafları - Fotoğraflarınızı frontend/public/images/gallery/ klasörüne koyun
 // Dosya isimleri: milling-1.jpg, milling-2.jpg, turning-1.jpg, parts-1.jpg vb.
@@ -50,22 +50,8 @@ export const GalleryPage = () => {
   ];
 
   useEffect(() => {
-    const fetchGallery = async () => {
-      try {
-        setLoading(true);
-        const data = await galleryApi.getAll();
-        setItems(data.length > 0 ? data : fallbackGallery);
-        setError(null);
-      } catch (err) {
-        console.warn('Using fallback gallery:', err);
-        setItems(fallbackGallery);
-        setError(null);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchGallery();
+    setItems(fallbackGallery);
+    setLoading(false);
   }, []);
 
   const filteredItems = selectedCategory === 'All'
