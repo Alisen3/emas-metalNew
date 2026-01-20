@@ -7,14 +7,14 @@ import { galleryApi, getImageUrl } from '../api';
 
 // Fallback data
 const fallbackGallery = [
-  { id: '1', title: '5-Axis CNC Milling Center', category: 'Milling', imageUrl: '', description: 'DMG MORI DMU 80 eVo', createdAt: '' },
-  { id: '2', title: 'Precision Turning Operation', category: 'Turning', imageUrl: '', description: 'High-precision turning', createdAt: '' },
-  { id: '3', title: 'Aerospace Component', category: 'Parts', imageUrl: '', description: 'Titanium aerospace part', createdAt: '' },
-  { id: '4', title: 'Production Floor', category: 'Factory', imageUrl: '', description: 'Modern 2,500m² facility', createdAt: '' },
-  { id: '5', title: 'Multi-Axis Machining', category: 'Milling', imageUrl: '', description: 'Complex geometry machining', createdAt: '' },
-  { id: '6', title: 'Swiss-Type Turning', category: 'Turning', imageUrl: '', description: 'Small precision parts', createdAt: '' },
-  { id: '7', title: 'Aluminum Housing', category: 'Parts', imageUrl: '', description: 'Anodized enclosure', createdAt: '' },
-  { id: '8', title: 'Quality Lab', category: 'Factory', imageUrl: '', description: 'CMM inspection room', createdAt: '' },
+  { id: '1', title: '5-Axis CNC Milling Center', category: 'Milling', imageUrl: '/images/IMG_1130.jpg', description: 'DMG MORI DMU 80 eVo', createdAt: '' },
+  { id: '2', title: 'Precision Turning Operation', category: 'Turning', imageUrl: '/images/IMG_1131.jpg', description: 'High-precision turning', createdAt: '' },
+  { id: '3', title: 'Aerospace Component', category: 'Parts', imageUrl: '/images/IMG_1132.jpg', description: 'Titanium aerospace part', createdAt: '' },
+  { id: '4', title: 'Production Floor', category: 'Factory', imageUrl: '/images/IMG_1133.jpg', description: 'Modern 2,500m² facility', createdAt: '' },
+  { id: '5', title: 'Multi-Axis Machining', category: 'Milling', imageUrl: '/images/IMG_1136.jpg', description: 'Complex geometry machining', createdAt: '' },
+  { id: '6', title: 'Swiss-Type Turning', category: 'Turning', imageUrl: '/images/IMG_1136.jpg', description: 'Small precision parts', createdAt: '' },
+  { id: '7', title: 'Aluminum Housing', category: 'Parts', imageUrl: '/images/IMG_1136.jpg', description: 'Anodized enclosure', createdAt: '' },
+  { id: '8', title: 'Quality Lab', category: 'Factory', imageUrl: '/images/IMG_1142.jpg', description: 'CMM inspection room', createdAt: '' },
 ];
 
 export const GalleryPage = () => {
