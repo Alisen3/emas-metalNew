@@ -3,6 +3,7 @@ import { Layout } from './components/layout';
 import {
   HomePage,
   AboutPage,
+  MissionVisionPage,
   ServicesPage,
   CapabilitiesPage,
   ReferencesPage,
@@ -18,6 +19,7 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
           <Route path="about" element={<AboutPage />} />
+          <Route path="mission-vision" element={<MissionVisionPage />} />
           <Route path="services" element={<ServicesPage />} />
           <Route path="capabilities" element={<CapabilitiesPage />} />
           <Route path="references" element={<ReferencesPage />} />

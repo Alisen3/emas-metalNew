@@ -1,5 +1,6 @@
 export { HomePage } from './HomePage';
 export { AboutPage } from './AboutPage';
+export { MissionVisionPage } from './MissionVisionPage';
 export { ServicesPage } from './ServicesPage';
 export { CapabilitiesPage } from './CapabilitiesPage';
 export { ReferencesPage } from './ReferencesPage';
