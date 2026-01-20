@@ -5,6 +5,7 @@ import { X, ArrowRight, ZoomIn } from 'lucide-react';
 import { LoadingSpinner, Alert } from '../components/ui';
 import { galleryApi, getImageUrl } from '../api';
 
+
 export const GalleryPage = () => {
   const { t } = useTranslation();
   const [items, setItems] = useState([]);
@@ -22,7 +23,7 @@ export const GalleryPage = () => {
   ];
 
   useEffect(() => {
-    const fetchGallery = async () => {
+     const fetchGallery = async () => {
       try {
         setLoading(true);
         const data = await galleryApi.getAll();
@@ -35,7 +36,7 @@ export const GalleryPage = () => {
         setLoading(false);
       }
     };
-
+ 
     fetchGallery();
   }, []);
 
