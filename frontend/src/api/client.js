@@ -76,6 +76,8 @@ export const contactApi = {
 export const getImageUrl = (path) => {
   if (!path) return '';
   if (path.startsWith('http')) return path;
+  // Frontend public klasöründeki statik dosyalar için API URL'i ekleme
+  if (path.startsWith('/images/')) return path;
   return `${API_BASE_URL}${path}`;
 };
 
