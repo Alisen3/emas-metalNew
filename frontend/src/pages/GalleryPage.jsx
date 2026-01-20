@@ -137,7 +137,7 @@ export const GalleryPage = () => {
                     <img
                       src={getImageUrl(item.imageUrl)}
                       alt={item.title}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      className="w-full !h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
                   ) : (
                     <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-emas-soft-blue/20 to-emas-deep-blue/20">
