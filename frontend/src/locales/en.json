@@ -1,11 +1,14 @@
 {
   "nav": {
     "home": "Home",
-    "about": "About",
+    "corporate": "Corporate",
+    "about": "About Us",
+    "missionVision": "Mission & Vision",
+    "production": "Production",
     "services": "Services",
     "capabilities": "Capabilities",
-    "references": "References",
     "gallery": "Gallery",
+    "references": "References",
     "certificates": "Certificates",
     "contact": "Contact",
     "getQuote": "Get Quote"
@@ -264,6 +267,29 @@
     "energyPower": "Energy & Power",
     "industrialMachinery": "Industrial Machinery",
     "electronics": "Electronics"
+  },
+  "missionVision": {
+    "pageTitle": "Mission & Vision",
+    "pageSubtitle": "Our goals and the values that guide us on our journey to excellence.",
+    "mission": "Our Mission",
+    "missionText1": "To provide our customers with precision machined components of the highest quality, on time and at competitive prices.",
+    "missionText2": "We continuously improve our processes and invest in the latest technology to exceed customer expectations.",
+    "missionQuote": "Precision in every detail, quality in every product.",
+    "vision": "Our Vision",
+    "visionText1": "To become the leading precision machining partner in Europe, recognized for our technical excellence and customer-centric approach.",
+    "visionText2": "We aim to set industry standards through innovation, sustainability, and unwavering commitment to quality.",
+    "visionQuote": "Shaping the future of precision manufacturing.",
+    "coreValues": "Our Core Values",
+    "coreValuesDesc": "The principles that guide everything we do.",
+    "precision": "Precision",
+    "precisionDesc": "Every micron matters. We pursue perfection in every component we produce.",
+    "quality": "Quality",
+    "qualityDesc": "Uncompromising quality standards backed by ISO certifications and rigorous testing.",
+    "innovation": "Innovation",
+    "innovationDesc": "Continuously investing in technology and processes to stay ahead of the curve.",
+    "ctaTitle": "Partner With Us",
+    "ctaDesc": "Experience the EMAS Metal difference. Let's discuss how we can support your manufacturing needs.",
+    "contactUs": "Contact Us"
   },
   "certificates": {
     "pageTitle": "Our Certificates",

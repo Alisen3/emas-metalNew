@@ -1,11 +1,14 @@
 {
   "nav": {
     "home": "Ana Sayfa",
+    "corporate": "Kurumsal",
     "about": "Hakkımızda",
+    "missionVision": "Misyon & Vizyon",
+    "production": "Üretim",
     "services": "Hizmetler",
-    "capabilities": "Yetenekler",
-    "references": "Referanslar",
+    "capabilities": "Yeteneklerimiz",
     "gallery": "Galeri",
+    "references": "Referanslar",
     "certificates": "Sertifikalar",
     "contact": "İletişim",
     "getQuote": "Teklif Al"
@@ -264,6 +267,29 @@
     "energyPower": "Enerji ve Güç",
     "industrialMachinery": "Endüstriyel Makine",
     "electronics": "Elektronik"
+  },
+  "missionVision": {
+    "pageTitle": "Misyon & Vizyon",
+    "pageSubtitle": "Mükemmellik yolculuğumuzda bize rehberlik eden hedeflerimiz ve değerlerimiz.",
+    "mission": "Misyonumuz",
+    "missionText1": "Müşterilerimize en yüksek kalitede hassas işlenmiş bileşenleri, zamanında ve rekabetçi fiyatlarla sunmak.",
+    "missionText2": "Müşteri beklentilerini aşmak için süreçlerimizi sürekli iyileştiriyor ve en son teknolojiye yatırım yapıyoruz.",
+    "missionQuote": "Her detayda hassasiyet, her üründe kalite.",
+    "vision": "Vizyonumuz",
+    "visionText1": "Teknik mükemmelliğimiz ve müşteri odaklı yaklaşımımızla tanınan, Avrupa'nın lider hassas işleme ortağı olmak.",
+    "visionText2": "İnovasyon, sürdürülebilirlik ve kaliteye olan sarsılmaz bağlılığımızla sektör standartlarını belirlemeyi hedefliyoruz.",
+    "visionQuote": "Hassas üretimin geleceğini şekillendiriyoruz.",
+    "coreValues": "Temel Değerlerimiz",
+    "coreValuesDesc": "Yaptığımız her şeye rehberlik eden ilkeler.",
+    "precision": "Hassasiyet",
+    "precisionDesc": "Her mikron önemlidir. Ürettiğimiz her bileşende mükemmelliği hedefliyoruz.",
+    "quality": "Kalite",
+    "qualityDesc": "ISO sertifikaları ve titiz testlerle desteklenen taviz vermeyen kalite standartları.",
+    "innovation": "İnovasyon",
+    "innovationDesc": "Öncü olmak için teknoloji ve süreçlere sürekli yatırım yapıyoruz.",
+    "ctaTitle": "Bizimle Ortak Olun",
+    "ctaDesc": "EMAS Metal farkını deneyimleyin. Üretim ihtiyaçlarınızı nasıl destekleyebileceğimizi konuşalım.",
+    "contactUs": "Bizimle İletişime Geçin"
   },
   "certificates": {
     "pageTitle": "Sertifikalarımız",
