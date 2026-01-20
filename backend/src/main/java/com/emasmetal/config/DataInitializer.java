@@ -107,41 +107,51 @@ public class DataInitializer {
             }
             
             if (galleryItemRepository.count() == 0) {
-                log.info("Initializing sample gallery items...");
-                
+                log.info("Initializing gallery items...");
+
+                // Milling (Freze) kategorisi
                 galleryItemRepository.save(GalleryItem.builder()
-                        .title("5-Axis CNC Milling Center")
-                        .imageUrl("/uploads/gallery/sample-milling-1.jpg")
+                        .title("CNC Freze Makinesi")
+                        .imageUrl("/uploads/gallery/IMG_1136.jpg")
                         .category("Milling")
-                        .description("Our DMG MORI DMU 80 eVo 5-axis machining center")
+                        .description("Yüksek hassasiyetli CNC freze işleme merkezi")
                         .displayOrder(1)
                         .build());
-                
+
+                // Turning (Torna) kategorisi
                 galleryItemRepository.save(GalleryItem.builder()
-                        .title("Precision CNC Turning")
-                        .imageUrl("/uploads/gallery/sample-turning-1.jpg")
+                        .title("CNC Torna İşlemi")
+                        .imageUrl("/uploads/gallery/IMG_1130.jpg")
                         .category("Turning")
-                        .description("High-precision turning operation on aerospace component")
+                        .description("Hassas CNC torna operasyonu")
                         .displayOrder(2)
                         .build());
-                
+
                 galleryItemRepository.save(GalleryItem.builder()
-                        .title("Complex Machined Part")
-                        .imageUrl("/uploads/gallery/sample-part-1.jpg")
-                        .category("Parts")
-                        .description("Multi-axis machined titanium component for aerospace application")
+                        .title("Torna Üretimi")
+                        .imageUrl("/uploads/gallery/IMG_1131.jpg")
+                        .category("Turning")
+                        .description("Yüksek toleranslı torna işleme")
                         .displayOrder(3)
                         .build());
-                
+
                 galleryItemRepository.save(GalleryItem.builder()
-                        .title("Factory Floor Overview")
-                        .imageUrl("/uploads/gallery/sample-factory-1.jpg")
-                        .category("Factory")
-                        .description("Our modern 2,500m² production facility")
+                        .title("Döner Şaft Üretimi")
+                        .imageUrl("/uploads/gallery/IMG_1133.jpg")
+                        .category("Turning")
+                        .description("Hassas şaft ve mil üretimi")
                         .displayOrder(4)
                         .build());
-                
-                log.info("Sample gallery items created");
+
+                galleryItemRepository.save(GalleryItem.builder()
+                        .title("Torna Atölyesi")
+                        .imageUrl("/uploads/gallery/IMG_1142.jpg")
+                        .category("Turning")
+                        .description("Modern torna üretim hattı")
+                        .displayOrder(5)
+                        .build());
+
+                log.info("Gallery items created");
             }
         };
     }
