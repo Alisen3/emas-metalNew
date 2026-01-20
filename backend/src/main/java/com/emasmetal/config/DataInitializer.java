@@ -112,7 +112,7 @@ public class DataInitializer {
                 // Milling (Freze) kategorisi
                 galleryItemRepository.save(GalleryItem.builder()
                         .title("CNC Freze Makinesi")
-                        .imageUrl("/uploads/gallery/IMG_1136.jpg")
+                        .imageUrl("/images/gallery/IMG_1136.jpg")
                         .category("Milling")
                         .description("Yüksek hassasiyetli CNC freze işleme merkezi")
                         .displayOrder(1)
@@ -121,7 +121,7 @@ public class DataInitializer {
                 // Turning (Torna) kategorisi
                 galleryItemRepository.save(GalleryItem.builder()
                         .title("CNC Torna İşlemi")
-                        .imageUrl("/uploads/gallery/IMG_1130.jpg")
+                        .imageUrl("/images/gallery/IMG_1130.jpg")
                         .category("Turning")
                         .description("Hassas CNC torna operasyonu")
                         .displayOrder(2)
@@ -129,7 +129,7 @@ public class DataInitializer {
 
                 galleryItemRepository.save(GalleryItem.builder()
                         .title("Torna Üretimi")
-                        .imageUrl("/uploads/gallery/IMG_1131.jpg")
+                        .imageUrl("/images/gallery/IMG_1131.jpg")
                         .category("Turning")
                         .description("Yüksek toleranslı torna işleme")
                         .displayOrder(3)
@@ -137,7 +137,7 @@ public class DataInitializer {
 
                 galleryItemRepository.save(GalleryItem.builder()
                         .title("Döner Şaft Üretimi")
-                        .imageUrl("/uploads/gallery/IMG_1133.jpg")
+                        .imageUrl("/images/gallery/IMG_1133.jpg")
                         .category("Turning")
                         .description("Hassas şaft ve mil üretimi")
                         .displayOrder(4)
@@ -145,7 +145,7 @@ public class DataInitializer {
 
                 galleryItemRepository.save(GalleryItem.builder()
                         .title("Torna Atölyesi")
-                        .imageUrl("/uploads/gallery/IMG_1142.jpg")
+                        .imageUrl("/images/gallery/IMG_1142.jpg")
                         .category("Turning")
                         .description("Modern torna üretim hattı")
                         .displayOrder(5)
