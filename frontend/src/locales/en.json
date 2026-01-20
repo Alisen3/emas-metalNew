@@ -6,6 +6,7 @@
     "capabilities": "Capabilities",
     "references": "References",
     "gallery": "Gallery",
+    "certificates": "Certificates",
     "contact": "Contact",
     "getQuote": "Get Quote"
   },
@@ -263,5 +264,25 @@
     "energyPower": "Energy & Power",
     "industrialMachinery": "Industrial Machinery",
     "electronics": "Electronics"
+  },
+  "certificates": {
+    "pageTitle": "Our Certificates",
+    "pageSubtitle": "International certifications that document our commitment to quality and reliability.",
+    "ourCertificates": "Quality Certificates",
+    "ourCertificatesDesc": "Review our certifications that document our compliance with the highest industry standards.",
+    "issuer": "Issuer",
+    "validUntil": "Valid Until",
+    "view": "View",
+    "download": "Download",
+    "close": "Close",
+    "openNewTab": "Open in New Tab",
+    "commitmentTitle": "Our Quality Commitment",
+    "commitmentP1": "At EMAS Metal, quality is not just a goal, it's a core value. All our processes are designed to comply with international standards and are continuously audited.",
+    "commitmentP2": "Our certifications are a guarantee that the products and services we offer to our customers meet the highest quality standards.",
+    "contactUs": "Contact Us",
+    "qualityInspection": "Quality Inspection",
+    "yearsExperience": "Years Experience",
+    "isoCertificates": "ISO Certificates",
+    "defectRate": "Defect Rate"
   }
 }

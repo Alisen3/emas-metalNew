@@ -6,6 +6,7 @@
     "capabilities": "Yetenekler",
     "references": "Referanslar",
     "gallery": "Galeri",
+    "certificates": "Sertifikalar",
     "contact": "İletişim",
     "getQuote": "Teklif Al"
   },
@@ -263,5 +264,25 @@
     "energyPower": "Enerji ve Güç",
     "industrialMachinery": "Endüstriyel Makine",
     "electronics": "Elektronik"
+  },
+  "certificates": {
+    "pageTitle": "Sertifikalarımız",
+    "pageSubtitle": "Kalite ve güvenilirlik taahhüdümüzü belgeleyen uluslararası sertifikalarımız.",
+    "ourCertificates": "Kalite Sertifikalarımız",
+    "ourCertificatesDesc": "En yüksek endüstri standartlarına uygunluğumuzu belgeleyen sertifikalarımızı inceleyebilirsiniz.",
+    "issuer": "Veren Kurum",
+    "validUntil": "Geçerlilik",
+    "view": "Görüntüle",
+    "download": "İndir",
+    "close": "Kapat",
+    "openNewTab": "Yeni Sekmede Aç",
+    "commitmentTitle": "Kalite Taahhüdümüz",
+    "commitmentP1": "EMAS Metal olarak, kalite sadece bir hedef değil, temel bir değerimizdir. Tüm süreçlerimiz uluslararası standartlara uygun olarak tasarlanmış ve sürekli olarak denetlenmektedir.",
+    "commitmentP2": "Sertifikalarımız, müşterilerimize sunduğumuz ürün ve hizmetlerin en yüksek kalite standartlarını karşıladığının güvencesidir.",
+    "contactUs": "Bizimle İletişime Geçin",
+    "qualityInspection": "Kalite Kontrolü",
+    "yearsExperience": "Yıllık Deneyim",
+    "isoCertificates": "ISO Sertifikası",
+    "defectRate": "Hata Oranı"
   }
 }
