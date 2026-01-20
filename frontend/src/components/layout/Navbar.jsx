@@ -17,6 +17,7 @@ export const Navbar = () => {
     { name: t('nav.capabilities'), path: '/capabilities' },
     { name: t('nav.references'), path: '/references' },
     { name: t('nav.gallery'), path: '/gallery' },
+    { name: t('nav.certificates'), path: '/certificates' },
     { name: t('nav.contact'), path: '/contact' },
   ];
 
