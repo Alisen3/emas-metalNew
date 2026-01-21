@@ -28,12 +28,7 @@ export const HomePage = () => {
       description: t('services.cncTurningDesc'),
       features: [t('services.liveTooling'), t('services.barFeeding'), t('services.swissTypeTurning')],
     },
-    {
-      icon: Zap,
-      title: t('services.rapidPrototyping'),
-      description: t('services.rapidPrototypingDesc'),
-      features: [t('services.48HourQuotes'), t('services.dfmFeedback'), t('services.materialSelectionSupport')],
-    },
+    
     {
       icon: Gauge,
       title: t('services.qualityInspection'),
@@ -54,15 +49,13 @@ export const HomePage = () => {
   const whyChooseUs = [
     {
       title: t('common.precisionEngineering'),
-      description: t('common.precisionEngineeringDesc'),
     },
     {
       title: t('common.fastTurnaround'),
-      description: t('common.fastTurnaroundDesc'),
     },
     {
-      title: t('common.materialExpertise'),
-      description: t('common.materialExpertiseDesc'),
+      title: t('common.materialVariety'),
+      description: t('common.materialVarietyDesc'),
     },
     {
       title: t('common.qualityCertified'),
@@ -83,7 +76,7 @@ export const HomePage = () => {
             subtitle={t('home.servicesSubtitle')}
           />
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
             {services.map((service) => (
               <ServiceCard
                 key={service.title}
@@ -141,8 +134,8 @@ export const HomePage = () => {
                 <div className="absolute inset-0 bg-industrial-pattern opacity-20" />
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="text-center text-white">
-                    <div className="text-6xl font-heading font-bold mb-2">15+</div>
-                    <div className="text-lg opacity-90">{t('home.yearsOfExcellence')}</div>
+                    <div className="text-6xl font-heading font-bold mb-2">10+</div>
+                    <div className="text-lg opacity-90">{t('home.yearsOfSustainability')}</div>
                   </div>
                 </div>
               </div>
@@ -153,7 +146,7 @@ export const HomePage = () => {
                     <Users className="w-7 h-7 text-emas-soft-blue" />
                   </div>
                   <div>
-                    <div className="text-2xl font-heading font-bold text-emas-deep-blue">200+</div>
+                    <div className="text-2xl font-heading font-bold text-emas-deep-blue">10+</div>
                     <div className="text-sm text-gray-500">{t('home.satisfiedClients')}</div>
                   </div>
                 </div>
