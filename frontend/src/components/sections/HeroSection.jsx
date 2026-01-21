@@ -13,32 +13,47 @@ export const HeroSection = () => {
   ];
 
   return (
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-gradient-to-br from-white via-emas-light-bg to-white">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 bg-industrial-pattern opacity-50" />
+    <section className="relative min-h-[90vh] flex items-center overflow-hidden">
+      {/* Video Background - Desktop only */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover hidden md:block"
+        poster="/images/hero-cnc.jpg"
+      >
+        <source src="/videos/hero-cnc.mp4" type="video/mp4" />
+      </video>
 
-      {/* Decorative Elements */}
-      <div className="absolute top-20 right-0 w-96 h-96 bg-emas-soft-blue/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 left-0 w-80 h-80 bg-emas-deep-blue/5 rounded-full blur-3xl" />
+      {/* Static Image Background - Mobile only */}
+      <div
+        className="absolute inset-0 w-full h-full bg-cover bg-center md:hidden"
+        style={{ backgroundImage: "url('/images/hero-cnc.jpg')" }}
+      />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+      {/* Dark Overlay for readability */}
+      <div className="absolute inset-0 bg-black/50" />
+
+      {/* Content Layer */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
+        <div className="max-w-2xl">
           {/* Content */}
           <div className="animate-fade-in">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-emas-light-bg rounded-full mb-6">
-              <span className="w-2 h-2 bg-emas-soft-blue rounded-full animate-pulse" />
-              <span className="text-sm font-medium text-emas-deep-blue">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-6 border border-white/20">
+              <span className="w-2 h-2 bg-emas-soft-blue rounded-full" />
+              <span className="text-sm font-medium text-white">
                 {t('hero.badge')}
               </span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-emas-deep-blue leading-tight mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white leading-tight mb-6">
               {t('hero.title1')}{' '}
-              <span className="text-gradient">{t('hero.title2')}</span>{' '}
+              <span className="text-emas-soft-blue">{t('hero.title2')}</span>{' '}
               {t('hero.title3')}
             </h1>
 
-            <p className="text-lg md:text-xl text-gray-600 leading-relaxed mb-8 max-w-xl">
+            <p className="text-lg md:text-xl text-gray-200 leading-relaxed mb-8 max-w-xl">
               {t('hero.description')}
             </p>
 
@@ -49,87 +64,27 @@ export const HeroSection = () => {
                 </PrimaryButton>
               </Link>
               <Link to="/capabilities">
-                <SecondaryButton size="lg">
+                <SecondaryButton size="lg" className="bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20">
                   {t('hero.ourCapabilities')}
                 </SecondaryButton>
               </Link>
             </div>
 
             {/* Stats */}
-            <div className="flex flex-wrap gap-8">
+            <div className="flex flex-wrap gap-6 md:gap-8">
               {stats.map(({ icon: Icon, value, label }) => (
                 <div key={label} className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-emas-light-bg rounded-xl flex items-center justify-center">
+                  <div className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center border border-white/20">
                     <Icon className="w-6 h-6 text-emas-soft-blue" />
                   </div>
                   <div>
-                    <div className="font-heading font-bold text-2xl text-emas-deep-blue">
+                    <div className="font-heading font-bold text-2xl text-white">
                       {value}
                     </div>
-                    <div className="text-sm text-gray-500">{label}</div>
+                    <div className="text-sm text-gray-300">{label}</div>
                   </div>
                 </div>
               ))}
-            </div>
-          </div>
-
-          {/* Visual Element */}
-          <div className="relative animate-fade-in animation-delay-200 hidden lg:block">
-            <div className="relative aspect-square max-w-lg mx-auto">
-              {/* Main Circle */}
-              <div className="absolute inset-0 bg-gradient-to-br from-emas-soft-blue to-emas-deep-blue rounded-full opacity-10" />
-
-              {/* Rotating Ring */}
-              <div className="absolute inset-4 border-2 border-dashed border-emas-soft-blue/30 rounded-full animate-spin" style={{ animationDuration: '30s' }} />
-
-              {/* Inner Circle with Icon */}
-              <div className="absolute inset-12 bg-white rounded-full shadow-2xl flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-24 h-24 mx-auto mb-4 bg-gradient-to-br from-emas-soft-blue to-emas-deep-blue rounded-2xl flex items-center justify-center">
-                    <svg
-                      viewBox="0 0 24 24"
-                      className="w-12 h-12 text-white"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                    >
-                      <path d="M12 2L12 6M12 18L12 22M2 12H6M18 12H22M4.93 4.93L7.76 7.76M16.24 16.24L19.07 19.07M4.93 19.07L7.76 16.24M16.24 7.76L19.07 4.93" />
-                      <circle cx="12" cy="12" r="4" />
-                    </svg>
-                  </div>
-                  <p className="font-heading font-semibold text-emas-deep-blue">
-                    {t('hero.fiveAxisCnc')}
-                  </p>
-                  <p className="text-sm text-gray-500">
-                    {t('hero.precisionMachining')}
-                  </p>
-                </div>
-              </div>
-
-              {/* Floating Cards */}
-              <div className="absolute top-8 -right-4 bg-white rounded-xl p-4 shadow-lg animate-slide-up animation-delay-300">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
-                    <Shield className="w-5 h-5 text-green-600" />
-                  </div>
-                  <div>
-                    <p className="font-medium text-gray-800">{t('hero.qualityAssured')}</p>
-                    <p className="text-xs text-gray-500">ISO 9001:2015</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="absolute bottom-12 -left-8 bg-white rounded-xl p-4 shadow-lg animate-slide-up animation-delay-400">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
-                    <Clock className="w-5 h-5 text-blue-600" />
-                  </div>
-                  <div>
-                    <p className="font-medium text-gray-800">{t('hero.fastTurnaround')}</p>
-                    <p className="text-xs text-gray-500">{t('hero.from48Hours')}</p>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
