@@ -192,29 +192,7 @@ export const HomePage = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-emas-deep-blue to-emas-soft-blue">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-6">
-            {t('home.readyToStart')}
-          </h2>
-          <p className="text-lg text-white/80 mb-8 max-w-2xl mx-auto">
-            {t('home.readyToStartDesc')}
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link to="/contact">
-              <button className="px-8 py-4 bg-white text-emas-deep-blue font-medium rounded-lg hover:bg-gray-100 transition-colors">
-                {t('home.requestQuote')}
-              </button>
-            </Link>
-            <Link to="/capabilities">
-              <button className="px-8 py-4 bg-transparent text-white font-medium rounded-lg border-2 border-white/50 hover:bg-white/10 transition-colors">
-                {t('home.viewCapabilities')}
-              </button>
-            </Link>
-          </div>
-        </div>
-      </section>
+      
     </div>
   );
 };
