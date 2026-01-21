@@ -14,11 +14,11 @@
     "getQuote": "Teklif Al"
   },
   "hero": {
-    "badge": "2009'dan Beri Hassas Mühendislik",
+    "badge": "2015'den İtibaren Üretimde",
     "title1": "Hassas CNC",
     "title2": "İşleme",
-    "title3": "Mükemmelliği",
-    "description": "Karmaşık havacılık bileşenlerinden yüksek hacimli endüstriyel parçalara kadar, en zorlu spesifikasyonları karşılayan hassas işlenmiş çözümler sunuyoruz. Vizyonunuz, mükemmelliğe ulaştırıldı.",
+    "title3": "",
+    "description": "Otomotiv, Beyaz Eşya, Tarım Makineleri, Hidrolik Pnömatik, Makina Parçaları sektörlerinde müşteri beklentilerini en üst seviyede karşılayacak şekilde talaşlı üretim yapmaktayız.",
     "requestQuote": "Teklif İste",
     "ourCapabilities": "Yeteneklerimiz",
     "yearsExperience": "Yıllık Deneyim",
@@ -35,9 +35,9 @@
     "servicesSubtitle": "Prototiplerden seri üretime kadar, tutarlılık ve hassasiyetle kaliteli işlenmiş bileşenler sunuyoruz.",
     "viewAllServices": "Tüm Hizmetleri Gör",
     "whyChooseTitle": "Neden EMAS Metal?",
-    "whyChooseSubtitle": "Onlarca yıllık işleme uzmanlığını modern teknolojiyle birleştirerek olağanüstü sonuçlar sunuyoruz.",
+    "whyChooseSubtitle": "Esnek üretim kabiliyetleri ile güvenilir tedarikçi - müşteri işbirliği sunuyoruz.",
     "learnMoreAboutUs": "Hakkımızda Daha Fazla",
-    "yearsOfExcellence": "Yıllık Mükemmellik",
+    "yearsOfExcellence": "Yıllık Sürdürülebilir Üretim",
     "satisfiedClients": "Memnun Müşteri",
     "industriesTitle": "Hizmet Verdiğimiz Sektörler",
     "industriesSubtitle": "Kritik bileşenler için çeşitli sektörlerde lider şirketler tarafından tercih ediliyoruz.",
@@ -176,12 +176,12 @@
     "joinClientsDesc": "Müşterilerimizin sürekli geri gelmesini sağlayan kalite ve güvenilirliği deneyimleyin.",
     "startConversation": "Görüşmeye Başlayın",
     "loadingReferences": "Referanslar yükleniyor...",
-    "aerospaceDefense": "Havacılık ve Savunma",
+    "aerospaceDefense": "Tarım Makinaları",
     "automotive": "Otomotiv",
-    "energyPower": "Enerji ve Güç",
-    "medicalDevices": "Tıbbi Cihazlar",
+    "energyPower": "Hidrolik Pnömatik",
+    "medicalDevices": "Beyaz Eşya",
     "industrialMachinery": "Endüstriyel Makine",
-    "roboticsAutomation": "Robotik ve Otomasyon"
+    "roboticsAutomation": "Makina Parçaları"
   },
   "gallery": {
     "pageTitle": "Çalışma Galerimiz",
@@ -261,12 +261,12 @@
     "readyToStartDesc": "48 saat içinde detaylı teklif için çizimlerinizi gönderin."
   },
   "industries": {
-    "aerospaceDefense": "Havacılık ve Savunma",
+    "aerospaceDefense": "Tarım Makinaları",
     "automotive": "Otomotiv",
-    "medicalDevices": "Tıbbi Cihazlar",
-    "energyPower": "Enerji ve Güç",
+    "medicalDevices": "Beyaz Eşya",
+    "energyPower": "Hidrolik Pnömatik",
     "industrialMachinery": "Endüstriyel Makine",
-    "electronics": "Elektronik"
+    "electronics": "Makina Parçaları"
   },
   "missionVision": {
     "pageTitle": "Misyon & Vizyon",
