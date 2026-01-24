@@ -7,25 +7,18 @@ import Footer from './Footer';
 const pageVariants = {
   initial: {
     opacity: 0,
-    filter: 'blur(10px)',
-    scale: 0.98,
   },
   in: {
     opacity: 1,
-    filter: 'blur(0px)',
-    scale: 1,
   },
   out: {
     opacity: 0,
-    filter: 'blur(10px)',
-    scale: 0.98,
   },
 };
 
 const pageTransition = {
-  type: 'tween',
-  ease: 'easeOut',
-  duration: 0.35,
+  duration: 0.25,
+  ease: [0.25, 0.1, 0.25, 1], // cubic-bezier - çok akıcı
 };
 
 export const Layout = () => {
