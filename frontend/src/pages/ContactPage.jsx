@@ -21,8 +21,8 @@ export const ContactPage = () => {
 
   const contactInfo = [
     { icon: MapPin, label: t('contact.address'), value: t('contact.addressValue') },
-    { icon: Phone, label: t('contact.phone'), value: '+90 216 555 1234', href: 'tel:+902165551234' },
-    { icon: Mail, label: t('contact.email'), value: 'info@emasmetal.com', href: 'mailto:info@emasmetal.com' },
+    { icon: Phone, label: t('contact.phone'), value: '+90 222 236 10 28', href: 'tel:+902222361028' },
+    { icon: Mail, label: t('contact.email'), value: 'info@emasmetal.com.tr', href: 'mailto:info@emasmetal.com.tr' },
     { icon: Clock, label: t('contact.hours'), value: t('contact.hoursValue') },
   ];
 
