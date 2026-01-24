@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { MapPin, Phone, Mail, Clock, Send, CheckCircle } from 'lucide-react';
 import { Input, Textarea, FileUpload, PrimaryButton, Alert } from '../components/ui';
+import { PageHero } from '../components/sections';
 import { contactApi } from '../api';
 
 export const ContactPage = () => {
@@ -87,20 +88,7 @@ export const ContactPage = () => {
 
   return (
     <div>
-      {/* Hero */}
-      <section className="relative py-20 bg-gradient-to-br from-emas-light-bg to-white">
-        <div className="absolute inset-0 bg-industrial-pattern opacity-50" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-heading font-bold text-emas-deep-blue mb-6">
-              {t('contact.pageTitle')}
-            </h1>
-            <p className="text-xl text-gray-600 leading-relaxed">
-              {t('contact.pageSubtitle')}
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero title={t('contact.pageTitle')} subtitle={t('contact.pageSubtitle')} />
 
       {/* Contact Section */}
       <section className="py-20 bg-white">

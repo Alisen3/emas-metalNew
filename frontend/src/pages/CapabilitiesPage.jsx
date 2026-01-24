@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { ArrowRight, CheckCircle } from 'lucide-react';
 import { SectionHeader } from '../components/ui';
+import { PageHero } from '../components/sections';
 
 const machines = [
   { name: 'DMG MORI DMU 80 eVo', type: '5-Axis Milling', specs: '800x650x550mm, 24,000 RPM', qty: 2 },
@@ -45,20 +46,7 @@ export const CapabilitiesPage = () => {
 
   return (
     <div>
-      {/* Hero */}
-      <section className="relative py-20 bg-gradient-to-br from-emas-light-bg to-white">
-        <div className="absolute inset-0 bg-industrial-pattern opacity-50" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-heading font-bold text-emas-deep-blue mb-6">
-              {t('capabilities.pageTitle')}
-            </h1>
-            <p className="text-xl text-gray-600 leading-relaxed">
-              {t('capabilities.pageSubtitle')}
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero title={t('capabilities.pageTitle')} subtitle={t('capabilities.pageSubtitle')} />
 
       {/* Equipment */}
       <section className="py-20 bg-white">

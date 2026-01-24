@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { X, ArrowRight, ZoomIn } from 'lucide-react';
 import { LoadingSpinner, Alert } from '../components/ui';
+import { PageHero } from '../components/sections';
 import { galleryApi, getImageUrl } from '../api';
 
 
@@ -56,20 +57,7 @@ export const GalleryPage = () => {
 
   return (
     <div>
-      {/* Hero */}
-      <section className="relative py-20 bg-gradient-to-br from-emas-light-bg to-white">
-        <div className="absolute inset-0 bg-industrial-pattern opacity-50" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-heading font-bold text-emas-deep-blue mb-6">
-              {t('gallery.pageTitle')}
-            </h1>
-            <p className="text-xl text-gray-600 leading-relaxed">
-              {t('gallery.pageSubtitle')}
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero title={t('gallery.pageTitle')} subtitle={t('gallery.pageSubtitle')} />
 
       {/* Gallery */}
       <section className="py-20 bg-white">
