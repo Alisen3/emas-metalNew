@@ -23,10 +23,10 @@ public class EmailService {
 
     private final JavaMailSender mailSender;
 
-    @Value("${app.mail.to:info@emasmetal.com}")
+    @Value("${app.mail.to:info@emasmetal.com.tr}")
     private String toEmail;
 
-    @Value("${app.mail.from:noreply@emasmetal.com}")
+    @Value("${app.mail.from:noreply@emasmetal.com.tr}")
     private String fromEmail;
 
     @Value("${app.mail.enabled:true}")

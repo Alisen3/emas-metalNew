@@ -55,8 +55,8 @@ jwt:
 app:
   mail:
     enabled: ${MAIL_ENABLED:false}
-    to: ${MAIL_TO:info@emasmetal.com}
-    from: ${MAIL_FROM:noreply@emasmetal.com}
+    to: ${MAIL_TO:info@emasmetal.com.tr}
+    from: ${MAIL_FROM:noreply@emasmetal.com.tr}
   file:
     upload-dir: ${UPLOAD_DIR:./uploads}
 
