@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Cog, Target, Zap, Wrench, Microscope, Package, ArrowRight, CheckCircle } from 'lucide-react';
+import { PageHero } from '../components/sections';
 
 export const ServicesPage = () => {
   const { t } = useTranslation();
@@ -82,20 +83,7 @@ export const ServicesPage = () => {
 
   return (
     <div>
-      {/* Hero */}
-      <section className="relative py-20 bg-gradient-to-br from-emas-light-bg to-white">
-        <div className="absolute inset-0 bg-industrial-pattern opacity-50" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-heading font-bold text-emas-deep-blue mb-6">
-              {t('services.pageTitle')}
-            </h1>
-            <p className="text-xl text-gray-600 leading-relaxed">
-              {t('services.pageSubtitle')}
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero title={t('services.pageTitle')} subtitle={t('services.pageSubtitle')} />
 
       {/* Services Grid */}
       <section className="py-20 bg-white">

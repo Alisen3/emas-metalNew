@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { X, ZoomIn } from 'lucide-react';
+import { PageHero } from '../components/sections';
 
 // Sertifikalar - Resimleri frontend/public/certificates/ klasörüne koyun
 const certificates = [
@@ -25,20 +26,7 @@ export const CertificatesPage = () => {
 
   return (
     <div>
-      {/* Hero */}
-      <section className="relative py-20 bg-gradient-to-br from-emas-light-bg to-white">
-        <div className="absolute inset-0 bg-industrial-pattern opacity-50" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-heading font-bold text-emas-deep-blue mb-6">
-              {t('certificates.pageTitle')}
-            </h1>
-            <p className="text-xl text-gray-600 leading-relaxed">
-              {t('certificates.pageSubtitle')}
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero title={t('certificates.pageTitle')} subtitle={t('certificates.pageSubtitle')} />
 
       {/* Certificates Grid */}
       <section className="py-20 bg-white">
