@@ -64,7 +64,6 @@ export const ReferencesPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             title={t('references.industriesTitle')}
-            subtitle={t('references.industriesSubtitle')}
           />
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
             {industries.map((industry) => (
@@ -87,7 +86,6 @@ export const ReferencesPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             title={t('references.ourClientsTitle')}
-            subtitle={t('references.ourClientsSubtitle')}
           />
 
           {loading ? (
