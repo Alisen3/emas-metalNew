@@ -47,14 +47,37 @@ export const MissionVisionPage = () => {
                 <p>{t('missionVision.missionText2')}</p>
               </div>
             </div>
+            {/* Mission Image Box */}
             <div className="relative">
-              <div className="aspect-[4/3] bg-gradient-to-br from-emas-soft-blue/10 to-emas-deep-blue/10 rounded-2xl flex items-center justify-center border border-emas-soft-blue/20">
-                <div className="text-center p-8">
-                  <Target className="w-16 h-16 text-emas-soft-blue mx-auto mb-4" />
-                  <p className="text-lg font-medium text-emas-deep-blue italic">
-                    "{t('missionVision.missionQuote')}"
-                  </p>
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
+                <img
+                  src="/images/mission.jpg"
+                  alt={t('missionVision.mission')}
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                    e.target.nextSibling.style.display = 'flex';
+                  }}
+                />
+                {/* Fallback placeholder - shown if image fails to load */}
+                <div
+                  className="absolute inset-0 bg-gradient-to-br from-emas-soft-blue/10 to-emas-deep-blue/10 border border-emas-soft-blue/20 items-center justify-center hidden"
+                >
+                  <div className="text-center p-8">
+                    <div className="w-20 h-20 mx-auto mb-4 border-2 border-dashed border-emas-soft-blue/40 rounded-xl flex items-center justify-center">
+                      <Target className="w-10 h-10 text-emas-soft-blue/60" />
+                    </div>
+                    <p className="text-sm text-emas-deep-blue/60">
+                      /images/mission.jpg
+                    </p>
+                  </div>
                 </div>
+              </div>
+              {/* Quote overlay */}
+              <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-lg">
+                <p className="text-sm font-medium text-emas-deep-blue italic text-center">
+                  "{t('missionVision.missionQuote')}"
+                </p>
               </div>
             </div>
           </div>
@@ -65,14 +88,37 @@ export const MissionVisionPage = () => {
       <section className="py-20 bg-emas-light-bg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Vision Image Box */}
             <div className="order-2 lg:order-1 relative">
-              <div className="aspect-[4/3] bg-gradient-to-br from-emas-deep-blue to-emas-soft-blue rounded-2xl flex items-center justify-center">
-                <div className="text-center p-8">
-                  <Eye className="w-16 h-16 text-white mx-auto mb-4" />
-                  <p className="text-lg font-medium text-white italic">
-                    "{t('missionVision.visionQuote')}"
-                  </p>
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
+                <img
+                  src="/images/vision.jpg"
+                  alt={t('missionVision.vision')}
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                    e.target.nextSibling.style.display = 'flex';
+                  }}
+                />
+                {/* Fallback placeholder - shown if image fails to load */}
+                <div
+                  className="absolute inset-0 bg-gradient-to-br from-emas-deep-blue to-emas-soft-blue items-center justify-center hidden"
+                >
+                  <div className="text-center p-8">
+                    <div className="w-20 h-20 mx-auto mb-4 border-2 border-dashed border-white/40 rounded-xl flex items-center justify-center">
+                      <Eye className="w-10 h-10 text-white/60" />
+                    </div>
+                    <p className="text-sm text-white/60">
+                      /images/vision.jpg
+                    </p>
+                  </div>
                 </div>
+              </div>
+              {/* Quote overlay */}
+              <div className="absolute bottom-4 left-4 right-4 bg-emas-deep-blue/95 backdrop-blur-sm rounded-xl p-4 shadow-lg">
+                <p className="text-sm font-medium text-white italic text-center">
+                  "{t('missionVision.visionQuote')}"
+                </p>
               </div>
             </div>
             <div className="order-1 lg:order-2">
