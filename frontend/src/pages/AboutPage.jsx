@@ -84,19 +84,7 @@ export const AboutPage = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-emas-deep-blue">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-heading font-bold text-white mb-6">{t('about.partnerWithUs')}</h2>
-          <p className="text-white/80 mb-8">
-            {t('about.partnerWithUsDesc')}
-          </p>
-          <Link to="/contact">
-            <PrimaryButton className="bg-white text-emas-deep-blue hover:bg-gray-100">
-              {t('about.getInTouch')}
-            </PrimaryButton>
-          </Link>
-        </div>
-      </section>
+      
     </div>
   );
 };
