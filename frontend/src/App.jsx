@@ -16,7 +16,6 @@ import {
 function App() {
   return (
     <BrowserRouter>
-    <ScrollToTop /> 
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
