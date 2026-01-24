@@ -1,0 +1,85 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database
+  db:
+    image: postgres:16-alpine
+    container_name: emas-db
+    environment:
+      POSTGRES_DB: emasdb
+      POSTGRES_USER: emas
+      POSTGRES_PASSWORD: emas_secure_password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+
+  # Spring Boot Backend
+  backend:
+    build: ./backend
+    container_name: emas-backend
+    depends_on:
+      - db
+    environment:
+      # Database
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_NAME: emasdb
+      DB_USERNAME: emas
+      DB_PASSWORD: emas_secure_password
+
+      # JWT (production'da güçlü secret kullan)
+      JWT_SECRET: your-super-secure-jwt-secret-key-here-min-32-chars
+
+      # Mail Service - AKTİF ET
+      MAIL_ENABLED: "true"
+
+      # SMTP Ayarları (kendi sağlayıcınıza göre değiştirin)
+      # ─────────────────────────────────────────────────
+      # Port 587 (STARTTLS) için:
+      MAIL_HOST: mail.emasmetal.com.tr
+      MAIL_PORT: "587"
+      MAIL_USERNAME: info@emasmetal.com.tr
+      MAIL_PASSWORD: your-email-password
+      MAIL_STARTTLS: "true"
+      MAIL_SSL: "false"
+
+      # Port 465 (SSL) için şunları kullanın:
+      # MAIL_PORT: "465"
+      # MAIL_STARTTLS: "false"
+      # MAIL_SSL: "true"
+      # ─────────────────────────────────────────────────
+
+      # Mail Adresleri
+      MAIL_TO: info@emasmetal.com.tr
+      MAIL_FROM: info@emasmetal.com.tr
+
+      # CORS (frontend URL'nizi ekleyin)
+      CORS_ORIGINS: https://emasmetal.com.tr,https://www.emasmetal.com.tr
+
+      # Admin
+      ADMIN_USERNAME: admin
+      ADMIN_PASSWORD: secure-admin-password
+      ADMIN_EMAIL: admin@emasmetal.com.tr
+
+    ports:
+      - "8080:8080"
+    volumes:
+      - uploads_data:/app/uploads
+    restart: unless-stopped
+
+  # React Frontend (nginx ile serve)
+  frontend:
+    build: ./frontend
+    container_name: emas-frontend
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+  uploads_data:

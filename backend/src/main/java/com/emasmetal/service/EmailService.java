@@ -26,7 +26,7 @@ public class EmailService {
     @Value("${app.mail.to:info@emasmetal.com.tr}")
     private String toEmail;
 
-    @Value("${app.mail.from:noreply@emasmetal.com.tr}")
+    @Value("${app.mail.from:info@emasmetal.com.tr}")
     private String fromEmail;
 
     @Value("${app.mail.enabled:true}")
