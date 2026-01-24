@@ -17,12 +17,12 @@ export const AboutPage = () => {
   const certifications = [
     'ISO 9001:2015 Quality Management',
     'ISO 14001:2015 Environmental Management',
-    'AS9100D Aerospace Quality',
+    'ISO 45001:2018 Occupational Health and Safety Management',
   ];
 
   return (
     <div>
-      <PageHero title={t('about.pageTitle')} subtitle={t('about.pageSubtitle')} />
+      <PageHero title={t('about.pageTitle')}  />
 
       {/* Story */}
       <section className="py-20 bg-white">
@@ -74,10 +74,17 @@ export const AboutPage = () => {
           <SectionHeader title={t('about.certificationsTitle')} subtitle={t('about.certificationsSubtitle')} />
           <div className="grid md:grid-cols-3 gap-6 mt-12">
             {certifications.map((cert) => (
-              <div key={cert} className="flex items-center gap-4 p-6 bg-emas-light-bg rounded-xl">
-                <Award className="w-8 h-8 text-emas-soft-blue flex-shrink-0" />
-                <span className="font-medium text-emas-deep-blue">{cert}</span>
-              </div>
+              <Link
+                key={cert}
+                to="/certificates"
+                className="block"
+              >
+                <div className="flex items-center gap-4 p-6 bg-emas-light-bg rounded-xl
+                                hover:bg-white hover:shadow-md transition">
+                  <Award className="w-8 h-8 text-emas-soft-blue" />
+                  <span className="font-medium text-emas-deep-blue">{cert}</span>
+                </div>
+              </Link>
             ))}
           </div>
         </div>
