@@ -83,7 +83,7 @@ export const Navbar = () => {
           {/* Logo */}
           <Link to="/" className="flex-shrink-0">
             <img
-              src="/images/logo.png"
+              src="/images/EmasMetalLogo.png"
               alt="EMAS Metal"
               className="h-12 w-auto"
             />

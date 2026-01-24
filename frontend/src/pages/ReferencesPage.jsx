@@ -57,35 +57,13 @@ export const ReferencesPage = () => {
       <PageHero title={t('references.pageTitle')} subtitle={t('references.pageSubtitle')} />
 
       {/* Stats */}
-      <section className="py-12 bg-emas-deep-blue">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-4xl font-heading font-bold text-white">200+</div>
-              <div className="text-white/70 mt-1">{t('references.satisfiedClients')}</div>
-            </div>
-            <div>
-              <div className="text-4xl font-heading font-bold text-white">15+</div>
-              <div className="text-white/70 mt-1">{t('references.yearsExperience')}</div>
-            </div>
-            <div>
-              <div className="text-4xl font-heading font-bold text-white">50K+</div>
-              <div className="text-white/70 mt-1">{t('references.partsDelivered')}</div>
-            </div>
-            <div>
-              <div className="text-4xl font-heading font-bold text-white">99.5%</div>
-              <div className="text-white/70 mt-1">{t('references.onTimeDelivery')}</div>
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       {/* Industries */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             title={t('references.industriesTitle')}
-            subtitle={t('references.industriesSubtitle')}
           />
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
             {industries.map((industry) => (
@@ -97,7 +75,6 @@ export const ReferencesPage = () => {
                   <Building2 className="w-6 h-6 text-emas-soft-blue" />
                   <span className="font-medium text-emas-deep-blue">{industry.name}</span>
                 </div>
-                <span className="text-sm text-gray-500">{industry.count}+ {t('references.clients')}</span>
               </div>
             ))}
           </div>
@@ -109,7 +86,6 @@ export const ReferencesPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             title={t('references.ourClientsTitle')}
-            subtitle={t('references.ourClientsSubtitle')}
           />
 
           {loading ? (
@@ -176,36 +152,10 @@ export const ReferencesPage = () => {
       </section>
 
       {/* Testimonial */}
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="text-6xl text-emas-soft-blue/20 mb-6">"</div>
-          <blockquote className="text-2xl text-gray-700 italic leading-relaxed mb-8">
-            {t('references.testimonialQuote')}
-          </blockquote>
-          <div>
-            <div className="font-heading font-semibold text-emas-deep-blue">{t('references.testimonialAuthor')}</div>
-            <div className="text-gray-500">{t('references.testimonialRole')}</div>
-          </div>
-        </div>
-      </section>
+      
 
       {/* CTA */}
-      <section className="py-20 bg-gradient-to-br from-emas-deep-blue to-emas-soft-blue">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-heading font-bold text-white mb-6">
-            {t('references.joinClients')}
-          </h2>
-          <p className="text-white/80 mb-8">
-            {t('references.joinClientsDesc')}
-          </p>
-          <Link to="/contact">
-            <button className="px-8 py-4 bg-white text-emas-deep-blue font-medium rounded-lg hover:bg-gray-100 transition-colors inline-flex items-center gap-2">
-              {t('references.startConversation')}
-              <ArrowRight className="w-5 h-5" />
-            </button>
-          </Link>
-        </div>
-      </section>
+      
     </div>
   );
 };

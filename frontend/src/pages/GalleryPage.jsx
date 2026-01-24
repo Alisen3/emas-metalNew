@@ -6,6 +6,7 @@ import { LoadingSpinner, Alert } from '../components/ui';
 import { PageHero } from '../components/sections';
 import { galleryApi, getImageUrl } from '../api';
 
+
 export const GalleryPage = () => {
   const { t } = useTranslation();
   const [items, setItems] = useState([]);
@@ -23,7 +24,7 @@ export const GalleryPage = () => {
   ];
 
   useEffect(() => {
-    const fetchGallery = async () => {
+     const fetchGallery = async () => {
       try {
         setLoading(true);
         const data = await galleryApi.getAll();
@@ -36,7 +37,7 @@ export const GalleryPage = () => {
         setLoading(false);
       }
     };
-
+ 
     fetchGallery();
   }, []);
 
@@ -184,22 +185,7 @@ export const GalleryPage = () => {
       )}
 
       {/* CTA */}
-      <section className="py-20 bg-emas-light-bg">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-heading font-bold text-emas-deep-blue mb-6">
-            {t('gallery.readyToSee')}
-          </h2>
-          <p className="text-gray-600 mb-8">
-            {t('gallery.readyToSeeDesc')}
-          </p>
-          <Link to="/contact">
-            <button className="px-8 py-4 bg-emas-cta-blue text-white font-medium rounded-lg hover:bg-emas-deep-blue transition-colors inline-flex items-center gap-2">
-              {t('gallery.requestQuote')}
-              <ArrowRight className="w-5 h-5" />
-            </button>
-          </Link>
-        </div>
-      </section>
+      
     </div>
   );
 };
