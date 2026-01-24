@@ -261,23 +261,23 @@
     "readyToStartDesc": "48 saat içinde detaylı teklif için çizimlerinizi gönderin."
   },
   "industries": {
-    "aerospaceDefense": "Tarım Makinaları",
-    "automotive": "Otomotiv",
-    "medicalDevices": "Beyaz Eşya",
-    "energyPower": "Hidrolik Pnömatik",
-    "industrialMachinery": "Endüstriyel Makine",
-    "electronics": "Makina Parçaları"
+  "agriculturalMachinery": "Tarım Makinaları",
+  "automotive": "Otomotiv",
+  "homeAppliances": "Beyaz Eşya",
+  "hydraulicPneumatic": "Hidrolik Pnömatik",
+  "industrialMachinery": "Endüstriyel Makine",
+  "machineParts": "Makina Parçaları"
   },
   "missionVision": {
     "pageTitle": "Misyon & Vizyon",
     "pageSubtitle": "Mükemmellik yolculuğumuzda bize rehberlik eden hedeflerimiz ve değerlerimiz.",
     "mission": "Misyonumuz",
-    "missionText1": "Müşterilerimize en yüksek kalitede hassas işlenmiş bileşenleri, zamanında ve rekabetçi fiyatlarla sunmak.",
-    "missionText2": "Müşteri beklentilerini aşmak için süreçlerimizi sürekli iyileştiriyor ve en son teknolojiye yatırım yapıyoruz.",
+    "missionText1": "Mevcut kaynaklarımızı en verimli şekilde kullanarak, sürekli iyileştirme anlayışıyla talaşlı üretim alanında rekabetçi bir yapı oluşturmak ve ürün portföyümüzü geliştirmek.",
+    "missionText2": "Müşteri ve çalışan memnuniyetini esas alarak sektörde sürdürülebilir bir konum elde etmek.",
     "missionQuote": "Her detayda hassasiyet, her üründe kalite.",
     "vision": "Vizyonumuz",
-    "visionText1": "Teknik mükemmelliğimiz ve müşteri odaklı yaklaşımımızla tanınan, Avrupa'nın lider hassas işleme ortağı olmak.",
-    "visionText2": "İnovasyon, sürdürülebilirlik ve kaliteye olan sarsılmaz bağlılığımızla sektör standartlarını belirlemeyi hedefliyoruz.",
+    "visionText1": "Kalite, süreklilik ve güvenilirlik ilkeleri doğrultusunda teknolojik altyapımızı sürekli geliştirerek dünya standartlarında üretim yapmak ve üretim kapasitemizi artırmak.",
+    "visionText2": "Yerel ve ulusal ölçekte ekonomiye sürdürülebilir katkı sağlamayı hedeflemek.",
     "visionQuote": "Hassas üretimin geleceğini şekillendiriyoruz.",
     "coreValues": "Temel Değerlerimiz",
     "coreValuesDesc": "Yaptığımız her şeye rehberlik eden ilkeler.",

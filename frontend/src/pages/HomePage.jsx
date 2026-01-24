@@ -38,12 +38,12 @@ export const HomePage = () => {
   ];
 
   const industries = [
-    t('industries.aerospaceDefense'),
+    t('industries.agriculturalMachinery'),
     t('industries.automotive'),
-    t('industries.medicalDevices'),
-    t('industries.energyPower'),
+    t('industries.homeAppliances'),
+    t('industries.hydraulicPneumatic'),
     t('industries.industrialMachinery'),
-    t('industries.electronics'),
+    t('industries.machineParts'),
   ];
 
   const whyChooseUs = [
