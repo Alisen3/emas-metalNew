@@ -117,14 +117,14 @@ export const ReferencesPage = () => {
           ) : error ? (
             <Alert type="error" message={error} className="mt-8" />
           ) : (
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 mt-12">
               {references.map((ref) => (
                 <div
                   key={ref.id}
-                  className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 group"
+                  className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-center justify-center"
                 >
                   {ref.logoUrl ? (
-                    <div className="h-16 flex items-center justify-center mb-4">
+                    <div className="h-20 flex items-center justify-center mb-4">
                       <img
                         src={getImageUrl(ref.logoUrl)}
                         alt={`${ref.name} logo`}
@@ -132,7 +132,7 @@ export const ReferencesPage = () => {
                       />
                     </div>
                   ) : (
-                    <div className="h-16 flex items-center justify-center mb-4">
+                    <div className="h-20 flex items-center justify-center mb-4">
                       <div className="w-16 h-16 bg-emas-light-bg rounded-xl flex items-center justify-center">
                         <span className="text-2xl font-heading font-bold text-emas-soft-blue">
                           {ref.name.charAt(0)}
@@ -141,30 +141,16 @@ export const ReferencesPage = () => {
                     </div>
                   )}
 
-                  <h3 className="font-heading font-semibold text-emas-deep-blue text-center mb-2">
-                    {ref.name}
-                  </h3>
-
-                  {ref.industry && (
-                    <p className="text-xs text-gray-500 text-center mb-2">{ref.industry}</p>
-                  )}
-
-                  {ref.description && (
-                    <p className="text-sm text-gray-600 text-center mb-3">{ref.description}</p>
-                  )}
-
                   {ref.websiteUrl && (
-                    <div className="text-center">
-                      <a
-                        href={ref.websiteUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 text-sm text-emas-soft-blue hover:text-emas-deep-blue transition-colors"
-                      >
-                        {t('references.visitWebsite')}
-                        <ExternalLink className="w-3 h-3" />
-                      </a>
-                    </div>
+                    <a
+                      href={ref.websiteUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-sm text-emas-soft-blue hover:text-emas-deep-blue transition-colors"
+                    >
+                      {t('references.visitWebsite')}
+                      <ExternalLink className="w-3 h-3" />
+                    </a>
                   )}
                 </div>
               ))}
