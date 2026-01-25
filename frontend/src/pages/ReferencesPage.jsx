@@ -8,13 +8,13 @@ import { referencesApi, getImageUrl } from '../api';
 
 // Fallback data for when API is unavailable
 const fallbackReferences = [
-  { id: '1', name: 'Arıkan Automotive', industry: 'Otomotiv Yan Sanayi', websiteUrl: 'https://www.arikanautomotive.com/tr', createdAt: '' },
-  { id: '2', name: 'Köklüce Makina', industry: 'Tarım Makineleri', websiteUrl: 'https://www.koklucemakina.com/', createdAt: '' },
-  { id: '3', name: 'EPTA', industry: 'Beyaz Eşya Yan Sanayi', websiteUrl: 'https://eptaglobal.com/', createdAt: '' },
-  { id: '4', name: 'ÖNAYSAN', industry: 'Beyaz Eşya Yan Sanayi',  websiteUrl: 'https://www.onaysan.com.tr/', createdAt: '' },
-  { id: '5', name: 'HİSARLAR', industry: 'Tarım Makineleri', websiteUrl: 'https://www.hisarlar.com.tr/index.html', createdAt: '' },
-  { id: '6', name: 'DÜŞLERSAN', industry: 'Robotics', websiteUrl: 'https://www.duslersan.com/', createdAt: '' },
- ];
+  { id: '1', name: 'Arıkan Automotive', industry: 'Otomotiv Yan Sanayi', logoUrl: '/images/references/arikan.png', websiteUrl: 'https://www.arikanautomotive.com/tr', createdAt: '' },
+  { id: '2', name: 'Köklüce Makina', industry: 'Tarım Makineleri', logoUrl: '/images/references/kokluce.png', websiteUrl: 'https://www.koklucemakina.com/', createdAt: '' },
+  { id: '3', name: 'EPTA', industry: 'Beyaz Eşya Yan Sanayi', logoUrl: '/images/references/epta.png', websiteUrl: 'https://eptaglobal.com/', createdAt: '' },
+  { id: '4', name: 'ÖNAYSAN', industry: 'Beyaz Eşya Yan Sanayi', logoUrl: '/images/references/onaysan.png', websiteUrl: 'https://www.onaysan.com.tr/', createdAt: '' },
+  { id: '5', name: 'HİSARLAR', industry: 'Tarım Makineleri', logoUrl: '/images/references/hisarlar.png', websiteUrl: 'https://www.hisarlar.com.tr/index.html', createdAt: '' },
+  { id: '6', name: 'DÜŞLERSAN', industry: 'Robotik', logoUrl: '/images/references/duslersan.png', websiteUrl: 'https://www.duslersan.com/', createdAt: '' },
+];
 
 export const ReferencesPage = () => {
   const { t } = useTranslation();
