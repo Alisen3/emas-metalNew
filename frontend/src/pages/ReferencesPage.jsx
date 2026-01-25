@@ -128,7 +128,7 @@ export const ReferencesPage = () => {
                       <img
                         src={getImageUrl(ref.logoUrl)}
                         alt={`${ref.name} logo`}
-                        className="max-h-full max-w-full object-contain grayscale group-hover:grayscale-0 transition-all"
+                        className="max-h-full max-w-full object-contain"
                       />
                     </div>
                   ) : (
