@@ -5,12 +5,20 @@ import { SectionHeader } from '../components/ui';
 import { PageHero } from '../components/sections';
 
 const machines = [
-  { name: 'DMG MORI DMU 80 eVo', type: '5-Axis Milling', specs: '800x650x550mm, 24,000 RPM', qty: 2 },
-  { name: 'DMG MORI CMX 1100 V', type: '3-Axis Milling', specs: '1100x560x510mm, 12,000 RPM', qty: 3 },
-  { name: 'Mazak INTEGREX i-200', type: 'Multi-Tasking', specs: 'Ø658mm, 1,500mm length', qty: 2 },
-  { name: 'Mazak QT-250MY', type: 'CNC Turning', specs: 'Ø366mm, Y-axis, live tooling', qty: 4 },
-  { name: 'Citizen L20', type: 'Swiss Turning', specs: 'Ø20mm bar capacity', qty: 2 },
-  { name: 'Zeiss CONTURA', type: 'CMM', specs: '1000x1200x600mm, VAST XXT', qty: 1 },
+  { name: 'MEKAY MEKAMAT 6YC', type: 'CNC Otomat Torna', specs: '4 Eksen, Ø42 mm çubuk kapasite ', qty: 1 },
+  { name: 'JİNFA JCL 42TG', type: 'CNC Otomat Torna', specs: '2 Eksen, Ø42 mm çubuk kapasite', qty: 1 },
+  { name: 'GOODWAY GLS-150', type: 'CNC Otomat Torna', specs: '2 Eksen, Ø42 mm çubuk kapasite', qty: 1 },
+  { name: 'MİYANO BNC-42CS', type: 'CNC Otomat Torna', specs: '2 Eksen, Ø42 mm çubuk kapasite', qty: 1 },
+  { name: 'DOOSAN S280', type: 'CNC Torna', specs: '2 Eksen, Maksimum tornalama çapı 280 mm ', qty: 1 },
+  { name: 'HAAS SL-10HE', type: 'CNC Torna', specs: '2 Eksen, Maksimum tornalama çapı 280 mm ', qty: 1 },
+  { name: 'ETASİS ETAMILL VL850', type: 'CNC Dik İşleme Merkezi', specs: '3 Eksen, Tabla boyutu 850x500x550 mm', qty: 1 },
+  { name: 'KARMETAL WOS280', type: 'CNC Testere', specs: 'Ø280 mm Kesme kapasite', qty: 1 },
+  { name: 'İNDEX B42', type: 'Mekanik Otomat Torna', specs: '3 Eksen, Ø42 mm Çubuk kapasite', qty: 8 },
+  { name: 'KOWAY X6325A', type: 'NC Freze', specs: '3 Eksen, Tabla boyutu 900x380x380mm', qty: 1 },
+  { name: 'KOWAY C6240B1/1000', type: 'NC Torna', specs: '2 Eksen, Maksimum tornalama çapı 240 mm', qty: 1 },
+  { name: 'KOWAY ETS-24', type: 'Servo Kılavuz Çekme ', specs: 'M5-M24 Diş çekme kapasite', qty: 1 },
+  { name: 'RETOSAN RM35-ES Ø42 ', type: 'Şanzımanlı Matkap ', specs: 'Ø35 mm Delik delme kapasite', qty: 1 },
+
 ];
 
 const tolerances = [
@@ -26,9 +34,8 @@ export const CapabilitiesPage = () => {
   const { t } = useTranslation();
 
   const materials = [
-    { category: t('capabilities.aluminumAlloys'), items: ['6061-T6', '7075-T6', '2024-T3', '5052-H32', 'MIC-6'] },
-    { category: t('capabilities.steelStainless'), items: ['304/316 SS', '17-4 PH', '4140', '4340', 'A36'] },
-    { category: t('capabilities.exoticAlloys'), items: ['Titanium Ti-6Al-4V', 'Inconel 625/718', 'Hastelloy', 'Monel'] },
+    { category: t('capabilities.aluminumAlloys'), items: ['6061-T6', '7075-T6', '2024-T3', '5052-H32'] },
+    { category: t('capabilities.steelStainless'), items: ['304/316 SS', '4140/4340', 'C20/C30/C40/C50', 'A36'] },
     { category: t('capabilities.plastics'), items: ['Delrin/Acetal', 'PEEK', 'UHMW', 'Nylon', 'PTFE'] },
     { category: t('capabilities.copperAlloys'), items: ['C110', 'C360 Brass', 'Bronze', 'Beryllium Copper'] },
   ];
@@ -51,7 +58,7 @@ export const CapabilitiesPage = () => {
       {/* Equipment */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader title={t('capabilities.equipmentTitle')} subtitle={t('capabilities.equipmentSubtitle')} />
+          <SectionHeader title={t('capabilities.equipmentTitle')}  />
           <div className="mt-12 overflow-x-auto">
             <table className="w-full min-w-[600px]">
               <thead>
@@ -65,7 +72,7 @@ export const CapabilitiesPage = () => {
               <tbody>
                 {machines.map((machine, index) => (
                   <tr key={machine.name} className={index % 2 === 0 ? 'bg-emas-light-bg/50' : ''}>
-                    <td className="py-4 px-4 font-medium text-gray-800">{machine.name}</td>
+                    <td className="py-4 px-4  text-gray-800">{machine.name}</td>
                     <td className="py-4 px-4 text-gray-600">{machine.type}</td>
                     <td className="py-4 px-4 text-gray-600">{machine.specs}</td>
                     <td className="py-4 px-4 text-center font-semibold text-emas-soft-blue">{machine.qty}</td>
@@ -80,7 +87,7 @@ export const CapabilitiesPage = () => {
       {/* Materials */}
       <section className="py-20 bg-emas-light-bg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader title={t('capabilities.materialsTitle')} subtitle={t('capabilities.materialsSubtitle')} />
+          <SectionHeader title={t('capabilities.materialsTitle')}  />
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
             {materials.map((cat) => (
               <div key={cat.category} className="bg-white rounded-xl p-6">
@@ -100,38 +107,12 @@ export const CapabilitiesPage = () => {
       </section>
 
       {/* Tolerances */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader title={t('capabilities.tolerancesTitle')} subtitle={t('capabilities.tolerancesSubtitle')} />
-          <div className="mt-12 overflow-x-auto">
-            <table className="w-full min-w-[600px]">
-              <thead>
-                <tr className="border-b-2 border-emas-light-bg">
-                  <th className="text-left py-4 px-4 font-heading font-semibold text-emas-deep-blue">{t('capabilities.feature')}</th>
-                  <th className="text-center py-4 px-4 font-heading font-semibold text-emas-deep-blue">{t('capabilities.standard')}</th>
-                  <th className="text-center py-4 px-4 font-heading font-semibold text-emas-deep-blue">{t('capabilities.precision')}</th>
-                  <th className="text-center py-4 px-4 font-heading font-semibold text-emas-deep-blue">{t('capabilities.highPrecision')}</th>
-                </tr>
-              </thead>
-              <tbody>
-                {tolerances.map((tol, index) => (
-                  <tr key={tol.feature} className={index % 2 === 0 ? 'bg-emas-light-bg/50' : ''}>
-                    <td className="py-4 px-4 font-medium text-gray-800">{t(`capabilities.${tol.feature}`)}</td>
-                    <td className="py-4 px-4 text-center text-gray-600">{tol.standard}</td>
-                    <td className="py-4 px-4 text-center text-gray-600">{tol.precision}</td>
-                    <td className="py-4 px-4 text-center font-medium text-emas-soft-blue">{tol.highPrecision}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
+      
 
       {/* Surface Finishes */}
       <section className="py-20 bg-emas-light-bg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeader title={t('capabilities.finishesTitle')} subtitle={t('capabilities.finishesSubtitle')} />
+          <SectionHeader title={t('capabilities.finishesTitle')}  />
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
             {finishes.map((finish) => (
               <div key={finish.name} className="bg-white rounded-xl p-6">
