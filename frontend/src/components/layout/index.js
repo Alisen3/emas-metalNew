@@ -1,5 +1,4 @@
 export { Navbar } from './Navbar';
 export { Footer } from './Footer';
 export { Layout } from './Layout';
-export { PageTransition } from './PageTransition';
 export { TopLoadingBar } from './TopLoadingBar';

@@ -8,14 +8,12 @@ import { referencesApi, getImageUrl } from '../api';
 
 // Fallback data for when API is unavailable
 const fallbackReferences = [
-  { id: '1', name: 'Siemens Energy', industry: 'Energy & Power', description: 'Precision turbine components', websiteUrl: 'https://siemens-energy.com', createdAt: '' },
-  { id: '2', name: 'Bosch Rexroth', industry: 'Industrial Automation', description: 'Hydraulic system components', websiteUrl: 'https://boschrexroth.com', createdAt: '' },
-  { id: '3', name: 'MAN Truck & Bus', industry: 'Automotive', description: 'Heavy-duty engine components', websiteUrl: 'https://man.eu', createdAt: '' },
-  { id: '4', name: 'ThyssenKrupp', industry: 'Steel & Materials', description: 'Steel processing equipment parts', websiteUrl: 'https://thyssenkrupp.com', createdAt: '' },
-  { id: '5', name: 'ABB Ltd', industry: 'Electrical Equipment', description: 'Motor housings and enclosures', websiteUrl: 'https://abb.com', createdAt: '' },
-  { id: '6', name: 'KUKA Robotics', industry: 'Robotics', description: 'Robotic arm components', websiteUrl: 'https://kuka.com', createdAt: '' },
-  { id: '7', name: 'Liebherr', industry: 'Heavy Machinery', description: 'Construction equipment parts', websiteUrl: 'https://liebherr.com', createdAt: '' },
-  { id: '8', name: 'Voith', industry: 'Industrial Technology', description: 'Power transmission components', websiteUrl: 'https://voith.com', createdAt: '' },
+  { id: '1', name: 'Arıkan Automotive', industry: 'Otomotiv Yan Sanayi', logoUrl: '/images/references/arikan.png', websiteUrl: 'https://www.arikanautomotive.com/tr', createdAt: '' },
+  { id: '2', name: 'Köklüce Makina', industry: 'Tarım Makineleri', logoUrl: '/images/references/kokluce.png', websiteUrl: 'https://www.koklucemakina.com/', createdAt: '' },
+  { id: '3', name: 'EPTA', industry: 'Beyaz Eşya Yan Sanayi', logoUrl: '/images/references/epta.png', websiteUrl: 'https://eptaglobal.com/', createdAt: '' },
+  { id: '4', name: 'ÖNAYSAN', industry: 'Beyaz Eşya Yan Sanayi', logoUrl: '/images/references/onaysan.png', websiteUrl: 'https://www.onaysan.com.tr/', createdAt: '' },
+  { id: '5', name: 'HİSARLAR', industry: 'Tarım Makineleri', logoUrl: '/images/references/hisarlar.png', websiteUrl: 'https://www.hisarlar.com.tr/index.html', createdAt: '' },
+  { id: '6', name: 'DÜŞLERSAN', industry: 'Robotik', logoUrl: '/images/references/duslersan.png', websiteUrl: 'https://www.duslersan.com/', createdAt: '' },
 ];
 
 export const ReferencesPage = () => {

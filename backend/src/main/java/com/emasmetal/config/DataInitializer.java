@@ -53,57 +53,57 @@ public class DataInitializer {
                 log.info("Admin user created with username: {}", adminUsername);
             }
             if (referenceRepository.count() == 0) {
-                log.info("Initializing sample references...");
-                
+                log.info("Initializing company references...");
+
                 referenceRepository.save(Reference.builder()
-                        .name("Siemens Energy")
-                        .websiteUrl("https://www.siemens-energy.com")
-                        .industry("Energy & Power")
-                        .description("Precision turbine components for power generation systems")
+                        .name("Arıkan Automotive")
+                        .websiteUrl("https://www.arikanautomotive.com/tr")
+                        .logoUrl("/images/references/arikan.png")
+                        .industry("Otomotiv Yan Sanayi")
                         .displayOrder(1)
                         .build());
-                
+
                 referenceRepository.save(Reference.builder()
-                        .name("Bosch Rexroth")
-                        .websiteUrl("https://www.boschrexroth.com")
-                        .industry("Industrial Automation")
-                        .description("Hydraulic system components and precision machined parts")
+                        .name("Köklüce Makina")
+                        .websiteUrl("https://www.koklucemakina.com/")
+                        .logoUrl("/images/references/kokluce.png")
+                        .industry("Tarım Makineleri")
                         .displayOrder(2)
                         .build());
-                
+
                 referenceRepository.save(Reference.builder()
-                        .name("MAN Truck & Bus")
-                        .websiteUrl("https://www.man.eu")
-                        .industry("Automotive")
-                        .description("Heavy-duty engine components and transmission parts")
+                        .name("EPTA")
+                        .websiteUrl("https://eptaglobal.com/")
+                        .logoUrl("/images/references/epta.png")
+                        .industry("Beyaz Eşya Yan Sanayi")
                         .displayOrder(3)
                         .build());
-                
+
                 referenceRepository.save(Reference.builder()
-                        .name("ThyssenKrupp")
-                        .websiteUrl("https://www.thyssenkrupp.com")
-                        .industry("Steel & Materials")
-                        .description("Precision machining for steel processing equipment")
+                        .name("ÖNAYSAN")
+                        .websiteUrl("https://www.onaysan.com.tr/")
+                        .logoUrl("/images/references/onaysan.png")
+                        .industry("Beyaz Eşya Yan Sanayi")
                         .displayOrder(4)
                         .build());
-                
+
                 referenceRepository.save(Reference.builder()
-                        .name("ABB Ltd")
-                        .websiteUrl("https://www.abb.com")
-                        .industry("Electrical Equipment")
-                        .description("Motor housings and electrical enclosure components")
+                        .name("HİSARLAR")
+                        .websiteUrl("https://www.hisarlar.com.tr/index.html")
+                        .logoUrl("/images/references/hisarlar.png")
+                        .industry("Tarım Makineleri")
                         .displayOrder(5)
                         .build());
-                
+
                 referenceRepository.save(Reference.builder()
-                        .name("KUKA Robotics")
-                        .websiteUrl("https://www.kuka.com")
-                        .industry("Robotics")
-                        .description("Robotic arm joints and precision mounting components")
+                        .name("DÜŞLERSAN")
+                        .websiteUrl("https://www.duslersan.com/")
+                        .logoUrl("/images/references/duslersan.png")
+                        .industry("Robotik")
                         .displayOrder(6)
                         .build());
-                
-                log.info("Sample references created");
+
+                log.info("Company references created");
             }
             
             if (galleryItemRepository.count() == 0) {
