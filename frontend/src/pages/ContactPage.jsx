@@ -185,14 +185,12 @@ export const ContactPage = () => {
                         onChange={handleChange}
                         error={errors.name}
                         required
-                        placeholder="John Smith"
                       />
                       <Input
                         label={t('contact.company')}
                         name="company"
                         value={formData.company}
                         onChange={handleChange}
-                        placeholder="Acme Corporation"
                       />
                     </div>
 
@@ -205,7 +203,6 @@ export const ContactPage = () => {
                         onChange={handleChange}
                         error={errors.email}
                         required
-                        placeholder="john@company.com"
                       />
                       <Input
                         label={t('contact.phoneLabel')}
@@ -213,7 +210,6 @@ export const ContactPage = () => {
                         type="tel"
                         value={formData.phone}
                         onChange={handleChange}
-                        placeholder="+1 234 567 8900"
                       />
                     </div>
 
@@ -224,7 +220,6 @@ export const ContactPage = () => {
                       onChange={handleChange}
                       error={errors.message}
                       required
-                      placeholder={t('contact.projectPlaceholder')}
                       rows={5}
                     />
 
@@ -251,16 +246,7 @@ export const ContactPage = () => {
       </section>
 
       {/* Quick Response Promise */}
-      <section className="py-16 bg-emas-deep-blue">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-2xl font-heading font-bold text-white mb-4">
-            {t('contact.responseGuarantee')}
-          </h2>
-          <p className="text-white/80">
-            {t('contact.responseGuaranteeDesc')}
-          </p>
-        </div>
-      </section>
+      
     </div>
   );
 };
