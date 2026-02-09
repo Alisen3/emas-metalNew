@@ -5,9 +5,9 @@ import { PageHero } from '../components/sections';
 
 // Sertifikalar - Resimleri frontend/public/certificates/ klasörüne koyun
 const certificates = [
-  { id: '1', name: 'ISO 9001:2015', imageUrl: '/certificates/iso-9001.jpg' },
-  { id: '2', name: 'ISO 14001:2015', imageUrl: '/certificates/iso-14001.jpg' },
-  { id: '3', name: 'IATF 16949:2016', imageUrl: '/certificates/iatf-16949.jpg' },
+  { id: '1', name: 'ISO 9001:2015', imageUrl: '/certificates/ISO9001.jpg' },
+  { id: '2', name: 'ISO 14001:2015', imageUrl: '/certificates/ISO14001.jpg' },
+  { id: '3', name: 'ISO 45001:2018', imageUrl: '/certificates/ISO45001.jpg' },
 ];
 
 export const CertificatesPage = () => {
@@ -86,7 +86,7 @@ export const CertificatesPage = () => {
             <img
               src={selectedCert.imageUrl}
               alt={selectedCert.name}
-              className="w-full rounded-lg bg-white"
+              className="max-h-[85vh] w-auto max-w-full mx-auto rounded-lg bg-white object-contain"
             />
             <div className="mt-4 text-center">
               <h3 className="text-xl font-heading font-semibold text-white">

@@ -143,22 +143,7 @@ export const ServicesPage = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-gradient-to-br from-emas-deep-blue to-emas-soft-blue">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-white mb-6">
-            {t('common.readyToStart')}
-          </h2>
-          <p className="text-lg text-white/80 mb-8">
-            {t('common.readyToStartDesc')}
-          </p>
-          <Link to="/contact">
-            <button className="px-8 py-4 bg-white text-emas-deep-blue font-medium rounded-lg hover:bg-gray-100 transition-colors inline-flex items-center gap-2">
-              {t('home.requestQuote')}
-              <ArrowRight className="w-5 h-5" />
-            </button>
-          </Link>
-        </div>
-      </section>
+      
     </div>
   );
 };

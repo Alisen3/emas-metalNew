@@ -71,21 +71,7 @@ export const HeroSection = () => {
             </div>
 
             {/* Stats */}
-            <div className="flex flex-wrap gap-6 md:gap-8">
-              {stats.map(({ icon: Icon, value, label }) => (
-                <div key={label} className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center border border-white/20">
-                    <Icon className="w-6 h-6 text-emas-soft-blue" />
-                  </div>
-                  <div>
-                    <div className="font-heading font-bold text-2xl text-white">
-                      {value}
-                    </div>
-                    <div className="text-sm text-gray-300">{label}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
+            
           </div>
         </div>
       </div>

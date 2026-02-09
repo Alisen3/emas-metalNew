@@ -27,8 +27,6 @@ export const Footer = () => {
     t('footer.cncTurning'),
     t('footer.multiAxisMachining'),
     t('footer.precisionGrinding'),
-    t('footer.qualityInspection'),
-    t('footer.assemblyServices'),
   ];
 
   return (
@@ -110,7 +108,7 @@ export const Footer = () => {
               <li className="flex gap-3">
                 <Phone className="w-5 h-5 text-emas-soft-blue flex-shrink-0" />
                 <a href="tel:+902222361028" className="text-gray-300 text-sm hover:text-white transition-colors">
-                  +90 222 236 10 28
+                  +90 533 548 93 64
                 </a>
               </li>
               <li className="flex gap-3">
