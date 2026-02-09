@@ -128,7 +128,7 @@ export const ContactPage = () => {
               {/* Interactive Map */}
               <div className="mt-8 aspect-[4/3] bg-emas-light-bg rounded-xl overflow-hidden shadow-lg">
                 <iframe
-                  src="https://maps.google.com/maps?q=75.+Y%C4%B1l+Mahallesi+11231+Sokak+Odunpazar%C4%B1+Eski%C5%9Fehir&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                  src="https://maps.google.com/maps?q=Şahoğlu+Otomatik+Kepenk+Eskişehir&z=18&output=embed"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
